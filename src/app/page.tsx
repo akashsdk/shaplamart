@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -6,6 +7,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold underline">
       Hello world! ok
     </h1>
+    <Link href="login">LohiN</Link>
     </div>
   );
 }
