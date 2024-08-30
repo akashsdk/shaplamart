@@ -1,3 +1,80 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* LogIn-Page */
+svg text {
+  font-family: Lora, serif;
+  letter-spacing: 10px;
+  stroke: #ffa5d8;
+  font-size: 50px;
+  font-weight: 700;
+  stroke-width: 3;
+  animation: textAnimateLonIn 5s infinite alternate;
+}
+
+@keyframes textAnimateLonIn {
+  0% {
+    stroke-dasharray: 0 50%;
+    stroke-dashoffset: 20%;
+    fill: hsl(189, 68%, 75%);
+  }
+
+  100% {
+    stroke-dasharray: 50% 0;
+    stroke-dashoffset: -20%;
+    fill: hsla(189, 68%, 75%, 0%);
+  }
+}
+
+.typewriter-animation {
+  overflow: hidden; /* Ensures the animation doesn't show text overflow */
+  border-right: 0.1em solid orange; /* Creates the cursor effect */
+  white-space: nowrap; /* Prevents the text from wrapping */
+  margin: 0 auto; /* Centers the text */
+  letter-spacing: 0.15em; /* Adjusts spacing between characters */
+  animation: typing 4s steps(30, end) 1s 1 normal both,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.bounce-animation {
+  display: inline-block;
+  font-weight: bold;
+  color: #4f46e5;
+  animation: bounce 1.5s;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}

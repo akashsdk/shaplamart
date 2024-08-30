@@ -13,7 +13,7 @@ import {
 
 import img1 from "@/Data/SVG/Sign Up.svg";
 
-const LogIn: React.FC = () => {
+const SignUp: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -36,7 +36,7 @@ const LogIn: React.FC = () => {
     <div className="w-full flex justify-center items-center">
       {/* Left-Box */}
       <div className="h-screen w-[50%] flex justify-center items-center flex-col bg-gray-50 p-8">
-        <p className="font-medium text-4xl font-mono bounce-animation">Sign In</p>
+        <p className="font-medium text-4xl font-mono bounce-animation">Sign Up</p>
         <div className="mt-[30px] flex justify-center items-center">
           <button className="h-[45px] w-[45px] mr-[20px] flex justify-center items-center rounded-xl border-2 border-rose-200 shadow-xl ">
             <GooglePlusOutlined className="text-[25px]" />
@@ -122,7 +122,7 @@ const LogIn: React.FC = () => {
         </svg>
 
         <p className="mt-0 text-lg text-center typewriter-animation">To keep connected with us please login <br/> with your personal info...</p>
-        <Link href="/signup" className="mt-8 py-2 px-4 border border-white rounded-md shadow-lg text-lg text-white font-medium bg-transparent  focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white">
+        <Link href="/login" className="mt-8 py-2 px-4 border border-white rounded-md shadow-lg text-lg text-white font-medium bg-transparent  focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white">
           Sign Up
         </Link>
       </div>
@@ -130,4 +130,4 @@ const LogIn: React.FC = () => {
   );
 };
 
-export default LogIn;
+export default SignUp;
