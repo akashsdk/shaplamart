@@ -50,7 +50,7 @@ const SignUp: React.FC = () => {
   return (
     <div className="w-full flex justify-center items-center">
       {/* Left-Box */}
-      <div className="h-screen w-[50%] flex justify-center items-center flex-col bg-indigo-600 text-white p-8 rounded-tr-[15%] rounded-br-[15%] overflow-hidden">
+      <div className="h-screen w-[50%] hidden md:flex justify-center items-center flex-col bg-indigo-600 text-white p-8 rounded-tr-[15%] rounded-br-[15%] overflow-hidden">
         <Image alt="Sign Up" src={img1} className="h-[300px] mt-[-100px]" />
 
         <svg className="w-[80%] h-auto" viewBox="0 0 600 100">
@@ -65,14 +65,14 @@ const SignUp: React.FC = () => {
         </p>
         <Link
           href="/login"
-          className="mt-8 py-2 px-4 border border-white rounded-md shadow-lg text-lg text-white font-medium bg-transparent  focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white"
+          className="mt-8 py-2 px-4 border border-rose-200 rounded-md shadow-lg text-lg text-rose-200 font-medium bg-transparent  focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white"
         >
-          Sign Up
+          Sign In
         </Link>
       </div>
 
       {/* Right-Box */}
-      <div className="h-screen w-[50%] flex justify-center items-center flex-col bg-gray-50 p-8">
+      <div className="h-screen w-full md:w-[50%] flex justify-center items-center flex-col bg-gray-50 p-8">
         <p className="font-medium text-4xl font-mono bounce-animation">
           Create Account
         </p>
@@ -195,17 +195,17 @@ const SignUp: React.FC = () => {
             </div>
           </div>
 
-          <button className="cursor-pointer mb-[7px] opacity-70 hover:opacity-100">
-            Forget Your Password?
-          </button>
-
           <button
             type="submit"
             className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
-            Sign In
+            Sign Up
           </button>
         </form>
+
+        <Link href="/login" className="md:hidden w-[80%] text-center mt-5 py-2 px-4 border-[3px] border-indigo-700 rounded-md shadow-sm text-lg font-medium text-indigo-700 hover:text-white bg-transparent hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        Sign In
+        </Link>
       </div>
     </div>
   );

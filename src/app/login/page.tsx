@@ -35,8 +35,10 @@ const LogIn: React.FC = () => {
   return (
     <div className="w-full flex justify-center items-center">
       {/* Left-Box */}
-      <div className="h-screen w-[50%] flex justify-center items-center flex-col bg-gray-50 p-8">
-        <p className="font-medium text-4xl font-mono bounce-animation">Sign In</p>
+      <div className="h-screen w-full md:w-[50%] flex justify-center items-center flex-col bg-gray-50 p-8">
+        <p className="font-medium text-4xl font-mono bounce-animation">
+          Sign In
+        </p>
         <div className="mt-[30px] flex justify-center items-center">
           <button className="h-[45px] w-[45px] mr-[20px] flex justify-center items-center rounded-xl border-2 border-rose-200 shadow-xl ">
             <GooglePlusOutlined className="text-[25px]" />
@@ -59,7 +61,10 @@ const LogIn: React.FC = () => {
         {/* Email and Password Input */}
         <form onSubmit={handleSubmit} className="mt-[10px] w-[80%]">
           <div className="mb-[20px]">
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-700"
+            >
               Email
             </label>
             <div className="mt-1 relative rounded-md shadow-sm">
@@ -79,7 +84,10 @@ const LogIn: React.FC = () => {
           </div>
 
           <div className="mb-[30px]">
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="password"
+              className="block text-sm font-medium text-gray-700"
+            >
               Password
             </label>
             <div className="mt-1 relative rounded-md shadow-sm">
@@ -109,11 +117,18 @@ const LogIn: React.FC = () => {
             Sign In
           </button>
         </form>
+
+        <Link
+          href="/signup"
+          className="md:hidden w-[80%] text-center mt-5 py-2 px-4 border-[3px] border-indigo-700 rounded-md shadow-sm text-lg font-medium text-indigo-700 hover:text-white bg-transparent hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        >
+          Sign Up
+        </Link>
       </div>
 
       {/* Right-Box */}
-      <div className="h-screen w-[50%] flex justify-center items-center flex-col bg-indigo-600 text-white p-8 rounded-tl-[15%] rounded-bl-[15%] overflow-hidden">
-        <Image alt="Sign Up" src={img1} className="h-[300px] mt-[-100px]"/>
+      <div className="h-screen w-[50%] hidden md:flex justify-center items-center flex-col bg-indigo-600 text-white p-8 rounded-tl-[15%] rounded-bl-[15%] overflow-hidden">
+        <Image alt="Sign Up" src={img1} className="h-[300px] mt-[-100px]" />
 
         <svg className="w-[80%] h-auto" viewBox="0 0 600 100">
           <text x="50%" y="50%" dominantBaseline="middle" textAnchor="middle">
@@ -121,8 +136,14 @@ const LogIn: React.FC = () => {
           </text>
         </svg>
 
-        <p className="mt-0 text-lg text-center typewriter-animation">To keep connected with us please login <br/> with your personal info...!</p>
-        <Link href="/signup" className="mt-8 py-2 px-4 border border-white rounded-md shadow-lg text-lg text-white font-medium bg-transparent  focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white">
+        <p className="mt-0 text-lg text-center typewriter-animation">
+          To keep connected with us please login <br /> with your personal
+          info...!
+        </p>
+        <Link
+          href="/signup"
+          className="mt-8 py-2 px-4 border border-rose-200 rounded-md shadow-lg text-lg text-rose-200 font-medium bg-transparent  focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white"
+        >
           Sign Up
         </Link>
       </div>
