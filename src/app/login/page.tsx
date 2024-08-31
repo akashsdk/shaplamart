@@ -121,7 +121,7 @@ const LogIn: React.FC = () => {
           </text>
         </svg>
 
-        <p className="mt-0 text-lg text-center typewriter-animation">To keep connected with us please login <br/> with your personal info...</p>
+        <p className="mt-0 text-lg text-center typewriter-animation">To keep connected with us please login <br/> with your personal info...!</p>
         <Link href="/signup" className="mt-8 py-2 px-4 border border-white rounded-md shadow-lg text-lg text-white font-medium bg-transparent  focus:outline-none focus:ring-2 focus:ring-offset-0 focus:ring-white">
           Sign Up
         </Link>
