@@ -3,13 +3,21 @@ import React from 'react'
 
 function Footer() {
   return (
-    <div>
+    <div className=''>
       Footer
       Footer
       Footer
       Footer
       Footer
-      
+      Footer
+      Footer
+      Footer
+      Footer
+      Footer
+      Footer
+      Footer
+      Footer
+      Footer
     </div>
   )
 }
