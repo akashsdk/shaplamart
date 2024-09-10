@@ -19,62 +19,7 @@ function Footer() {
       Footer
       Footer
 
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
-      Footer
+      
     </div>
   )
 }
