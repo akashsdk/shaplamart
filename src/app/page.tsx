@@ -7,7 +7,7 @@ export default function Home() {
       <h1 className="text-3xl font-bold underline">
       Hello world! ok
     </h1>
-    <Link href="login">LohiN</Link>
+    <Link href="login">Lohin</Link>
     </div>
   );
 }
