@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <ul className="flex justify-center space-x-4 mt-4">
           <li><a href="/about" className="hover:underline">About Us</a></li>
           <li><a href="/contact" className="hover:underline">Contact</a></li>
-          <li><a href="/privacy" className="hover:underline">Privacy Policy </a></li>
+          <li><a href="/privacy" className="hover:underline">Privacy  </a></li>
         </ul>
       </div>
     </footer>
