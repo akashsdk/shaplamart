@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import Index from "./Screen/Index";
+import IndexTow from "./Screen/IndexTow";
 
 export default function Home() {
   return (
     <div>
-      <h1 className="text-3xl font-bold underline">
-      Hello world! ok
-    </h1>
-    <Link href="login">Lohin</Link>
+      <Index />
+      <IndexTow />
     </div>
   );
 }
