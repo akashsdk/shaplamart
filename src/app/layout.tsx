@@ -6,6 +6,7 @@ import ParentComponent from "./components/ParentComponent";
 import Footer from "./components/Footer";
 import { usePathname } from "next/navigation"; // Import usePathname
 import FloatButtonClient from "./components/FloatButtonClient";
+import ParentComponentTow from "./components/ParentComponentTow";
 
 const inter = Inter({ subsets: ["latin"] });
 
