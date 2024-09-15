@@ -1,10 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ParentComponent from "./components/ParentComponent";
 import Footer from "./components/Footer";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation";
 import FloatButtonClient from "./components/FloatButtonClient";
 import ParentComponentTow from "./components/ParentComponentTow";
 
@@ -16,8 +17,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
-  const noLayoutPages = ["/login", "/signup", "/forget-password"]; // Add routes where you don't want the header and footer
+  const noLayoutPages = ["/login", "/signup", "/forget-password"];
   const isNoLayoutPage = noLayoutPages.includes(pathname);
+
+  const [showParentComponentTow, setShowParentComponentTow] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  // Detect scroll position and toggle ParentComponentTow
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      if (window.scrollY > window.innerHeight) {
+        setShowParentComponentTow(true);
+      } else {
+        setShowParentComponentTow(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <html lang="en">
@@ -27,7 +49,20 @@ export default function RootLayout({
       >
         <div>
           {!isNoLayoutPage && <ParentComponent />}
+
+          {/* Conditionally show ParentComponentTow when scrolled */}
+          {!isNoLayoutPage && (
+            <div
+              className={`fixed top-0 left-0 w-full z-50 transition-opacity duration-500 ${
+                showParentComponentTow ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              <ParentComponentTow />
+            </div>
+          )}
+
           {children}
+
           {!isNoLayoutPage && <Footer />}
         </div>
         <FloatButtonClient />

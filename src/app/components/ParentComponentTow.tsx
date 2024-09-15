@@ -5,7 +5,7 @@ import HeaderTow from "./HeaderTow";
 
 const ParentComponentTow = () => {
   return (
-    <div>
+    <div className="h-auto shadow-md">
       {/* Other content */}
       <HeaderTow />
     </div>
