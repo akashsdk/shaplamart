@@ -99,7 +99,7 @@ const HeaderTow: React.FC = () => {
           />
 
           {dropdownOpen && (
-            <div className="absolute ml-[-37vw] top-full w-[90vw] bg-white shadow-xl rounded-lg p-6 flex justify-between">
+            <div className="absolute ml-[-37vw] top-full w-[90vw] bg-white shadow-xl rounded-lg p-6 flex justify-between z-30">
               <div className="w-1/4">
                 <h3 className="text-xl font-medium mb-2 opacity-90">
                   Women&apos;s Fashion
@@ -296,7 +296,7 @@ const HeaderTow: React.FC = () => {
           />
 
           {dropdownOpen2 && (
-            <div className="absolute ml-[-43vw] top-full w-[90vw] bg-white shadow-xl rounded-lg p-6 flex justify-between">
+            <div className="absolute ml-[-43vw] top-full w-[90vw] bg-white shadow-xl rounded-lg p-6 flex justify-between z-30">
               <div className="w-1/4">
                 <Link href="/category/">
                   <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">
