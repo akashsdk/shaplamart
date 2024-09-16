@@ -3,6 +3,17 @@ import Link from "next/link";
 import Navlink from "./Navlink";
 import { DownOutlined } from "@ant-design/icons";
 
+import Img1 from '@/Data/Img/Featured Product.webp';
+import Img2 from '@/Data/Img/Accessories.webp';
+import Img3 from '@/Data/Img/New Arrivals.webp';
+import Img4 from '@/Data/Img/Footwear .webp';
+import Img5 from '@/Data/Img/Summer Styles.webp';
+import Img6 from '@/Data/Img/men.webp';
+import Img7 from '@/Data/Img/Winter Fashion.webp';
+import Img8 from '@/Data/Img/women.webp';
+
+import Image from "next/image";
+
 const HeaderTow: React.FC = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -65,7 +76,7 @@ const HeaderTow: React.FC = () => {
           />
 
           {dropdownOpen && (
-            <div className="absolute ml-[-44.5vw] top-full w-[90vw] bg-white shadow-xl rounded-lg p-6 flex justify-between">
+            <div className="absolute ml-[-37vw] top-full w-[90vw] bg-white shadow-xl rounded-lg p-6 flex justify-between">
               <div className="w-1/4">
                 <h3 className="text-xl font-medium mb-2 opacity-90">Women&apos;s Fashion</h3>
                 <div className="h-[1px] w-[80%] bg-slate-200"/>
@@ -114,7 +125,7 @@ const HeaderTow: React.FC = () => {
                 </ul>
               </div>
             </div>
-          )} 
+          )}
         </div>
 
 
@@ -135,54 +146,71 @@ const HeaderTow: React.FC = () => {
           />
 
           {dropdownOpen2 && (
-            <div className="absolute ml-[-44.5vw] top-full w-[90vw] bg-white shadow-xl rounded-lg p-6 flex justify-between">
+            <div className="absolute ml-[-43vw] top-full w-[90vw] bg-white shadow-xl rounded-lg p-6 flex justify-between">
               <div className="w-1/4">
-                <h3 className="text-xl font-medium mb-2 opacity-90">Women&apos;s Fashion 77</h3>
-                <div className="h-[1px] w-[80%] bg-slate-200"/>
-                <ul>
-                  <li className="mt-4" ><Navlink className="opacity-70 hover:opacity-100" href="/category/dresses" text="Dresses" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/tops" text="Tops & Blouses" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/sweaters" text="Sweaters & Cardigans" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/jackets" text="Jackets & Coats" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/" text="Pants & Jeans" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/" text="Skirts" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/" text="Activewear" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/" text="Lingerie & Sleepwear" /></li>
-                </ul>
+
+              <Link href='/category/' >
+              <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">Featured Product</h3>
+              <div className="h-[1px] w-[80%] bg-slate-200"/>
+              <Image alt="Img" src={Img1} className="mt-6 h-[250px] w-[250px] rounded-2xl shadow-pink-200"/>
+              </Link>
+              <div className="h-6" />
+              <Link href='/category/'>
+              <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">Accessories</h3>
+              <div className="h-[1px] w-[80%] bg-slate-200"/>
+              <Image alt="Img" src={Img2} className="mt-6 h-[250px] w-[250px] rounded-2xl shadow-pink-200"/>
+              </Link>
               </div>
 
               <div className="w-1/4">
-                <h3 className="text-xl font-medium mb-2 opacity-90">Men&apos;s Fashion</h3>
-                <div className="h-[1px] w-[80%] bg-slate-200"/>
-                <ul>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/shirts" text="Shirts" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/tshirts" text="T-Shirts & Polos" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/sweaters" text="Sweaters & Hoodies" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/jackets" text="Jackets & Blazers" /></li>
-                </ul>
+
+              <Link href='/category/' >
+              <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">New Arrivals</h3>
+              <div className="h-[1px] w-[80%] bg-slate-200"/>
+              <Image alt="Img" src={Img3} className="mt-6 h-[250px] w-[250px] rounded-2xl shadow-pink-200"/>
+              </Link>
+              <div className="h-6" />
+              <Link href='/category/'>
+              <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">Footwear</h3>
+              <div className="h-[1px] w-[80%] bg-slate-200"/>
+              <Image alt="Img" src={Img4} className="mt-6 h-[250px] w-[250px] rounded-2xl shadow-pink-200"/>
+              </Link>
               </div>
 
               <div className="w-1/4">
-                <h3 className="text-xl font-medium mb-2 opacity-90">Accessories</h3>
-                <div className="h-[1px] w-[80%] bg-slate-200"/>
-                <ul>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/bags" text="Bags & Purses" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/hats" text="Hats & Caps" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/scarves" text="Scarves & Shawls" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/sunglasses" text="Sunglasses" /></li>
-                </ul>
+
+              <Link href='/category/' >
+              <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">Summer Styles</h3>
+              <div className="h-[1px] w-[80%] bg-slate-200"/>
+              <Image alt="Img" src={Img5} className="mt-6 h-[250px] w-[250px] rounded-2xl shadow-pink-200"/>
+              </Link>
+              <div className="h-6" />
+              <Link href='/category/'>
+              <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">Men</h3>
+              <div className="h-[1px] w-[80%] bg-slate-200"/>
+              <Image alt="Img" src={Img6} className="mt-6 h-[250px] w-[250px] rounded-2xl shadow-pink-200"/>
+              </Link>
               </div>
 
+
               <div className="w-1/4">
-                <h3 className="text-xl font-medium mb-2 opacity-90">Footwear</h3>
-                <div className="h-[1px] w-[80%] bg-slate-200"/>
-                <ul>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/flats" text="Flats & Loafers" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/sneakers" text="Sneakers & Athletic" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/dress-shoes" text="Dress Shoes" /></li>
-                  <li className="mt-4"><Navlink className="opacity-70 hover:opacity-100" href="/category/heels" text="Heels & Pumps" /></li>
-                </ul>
+
+              <Link href='/category/' >
+              <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">Winter Fashion</h3>
+              <div className="h-[1px] w-[80%] bg-slate-200"/>
+              <Image alt="Img" src={Img7} className="mt-6 h-[250px] w-[250px] rounded-2xl shadow-pink-200"/>
+              </Link>
+              <div className="h-6" />
+              <Link href='/category/'>
+              <h3 className="text-xl font-medium mb-2 opacity-70 hover:opacity-100">Women</h3>
+              <div className="h-[1px] w-[80%] bg-slate-200"/>
+              <Image alt="Img" src={Img8} className="mt-6 h-[250px] w-[250px] rounded-2xl shadow-pink-200"/>
+              </Link>
               </div>
+
+              
+
+              
             </div>
           )} 
         </div>
@@ -196,7 +224,7 @@ const HeaderTow: React.FC = () => {
           <Navlink
             activeClasses="active-red"
             className="text-xl font-sans p-2 rounded-lg"
-            href="/shop"
+            href="/page"
             text={
               <>
                 Page <DownOutlined className="text-[15px]" />
@@ -208,39 +236,39 @@ const HeaderTow: React.FC = () => {
             <div className="absolute top-full left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-30">
             <Navlink
               activeClasses="active-red"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase hover:text-colorF3"
-              href="/services/contact-lenses"
-              text="Contact Lenses"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
+              href="/contact"
+              text="Contact"
             />
             <Navlink
               activeClasses="active-red"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase hover:text-colorF3"
-              href="/services/comprehensive"
-              text="Comprehensive"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
+              href="/aboutUs"
+              text="About us"
             />
             <Navlink
               activeClasses="active-red"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase hover:text-colorF3"
-              href="/services/keratoconus"
-              text="Keratoconus"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
+              href="/services"
+              text="Service"
             />
             <Navlink
               activeClasses="active-red"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase hover:text-colorF3"
-              href="/services/phakic-lens"
-              text="Phakic Lens"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
+              href="/faq"
+              text="Faq"
             />
             <Navlink
               activeClasses="active-red"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase hover:text-colorF3"
-              href="/services/retina-care"
-              text="Retina Care"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
+              href="/sizeChart"
+              text="Size-Chart"
             />
             <Navlink
               activeClasses="active-red"
-              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 uppercase hover:text-colorF3"
-              href="/services/glaucoma"
-              text="Glaucoma"
+              className="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-colorF3"
+              href="/PurchaseNow"
+              text="Purchase Now"
             />
           </div>
           )} 
