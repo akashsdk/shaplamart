@@ -17,7 +17,7 @@ const Header: React.FC = () => {
         {/* Email */}
         <a href="mailto:example@example.com" className="flex items-center opacity-60 hover:opacity-90 hover:text-blue-500">
           <MailOutlined />
-          <p className="ml-1">example@example.com</p>
+          <p className="ml-1 font-serif">example@example.com</p>
         </a>
         
         {/* Location */}
@@ -28,7 +28,7 @@ const Header: React.FC = () => {
           className="flex items-center ml-5 opacity-60 hover:opacity-90 hover:text-blue-500"
         >
           <EnvironmentOutlined />
-          <p className="ml-1">City, State, ZIP Code</p>
+          <p className="ml-1 font-serif">City, State, ZIP Code</p>
         </a>
       </div>
 

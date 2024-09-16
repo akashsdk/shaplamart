@@ -71,13 +71,13 @@ const HeaderTow: React.FC = () => {
   return (
     <div className="w-full h-[90px] bg-white flex justify-center items-center">
       <div className="w-[25%] flex justify-center items-center">
-        <Link href='/' className="text-3xl font-bold">Site Name</Link>
+        <Link href='/' className="text-3xl font-bold font-serif">Site Name</Link>
       </div>
 
       <div className="w-[50%] flex justify-center items-center">
         <Navlink
           activeClasses="active-red"
-          className="text-xl font-sans p-2 rounded-lg"
+          className="text-xl p-2 rounded-lg font-serif"
           href="/"
           text="Home"
         />
@@ -89,7 +89,7 @@ const HeaderTow: React.FC = () => {
         >
           <Navlink
             activeClasses="active-red"
-            className="text-xl font-sans p-2 rounded-lg"
+            className="text-xl font-serif p-2 rounded-lg"
             href="/shop"
             text={
               <>
@@ -286,7 +286,7 @@ const HeaderTow: React.FC = () => {
         >
           <Navlink
             activeClasses="active-red"
-            className="text-xl font-sans p-2 rounded-lg"
+            className="text-xl font-serif p-2 rounded-lg"
             href="/shop"
             text={
               <>
@@ -411,7 +411,7 @@ const HeaderTow: React.FC = () => {
         >
           <Navlink
             activeClasses="active-red"
-            className="text-xl font-sans p-2 rounded-lg"
+            className="text-xl font-serif p-2 rounded-lg"
             href="/page"
             text={
               <>
@@ -469,7 +469,7 @@ const HeaderTow: React.FC = () => {
           onMouseEnter={handleMouseEnter4}
           onMouseLeave={handleMouseLeave4}
         >
-          <div className="text-red-600 opacity-90 hover:opacity-100">
+          <div className="text-red-600 opacity-90 hover:opacity-100 font-serif">
             Eng <DownOutlined className="text-[15px]" />
           </div>
 
@@ -490,10 +490,10 @@ const HeaderTow: React.FC = () => {
           </div>
 
           {dropdownOpen5 && (
-            <div className="absolute top-full mt-2 left-0 ml-[-3vw] w-40 bg-white shadow-lg z-30">
+            <div className="absolute top-full mt-0 left-0 ml-[-3vw] w-40 bg-white shadow-lg z-30">
               <Navlink
                 activeClasses="active-red"
-                className="block px-4 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
+                className="block px-4 mt-2 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
                 href="/account"
                 text="My Account"
               />
