@@ -21,12 +21,10 @@ export default function RootLayout({
   const isNoLayoutPage = noLayoutPages.includes(pathname);
 
   const [showParentComponentTow, setShowParentComponentTow] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
 
   // Detect scroll position and toggle ParentComponentTow
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
       if (window.scrollY > window.innerHeight) {
         setShowParentComponentTow(true);
       } else {
@@ -48,24 +46,24 @@ export default function RootLayout({
         className={inter.className}
       >
         <div>
+          {/* Show ParentComponent unless it's a no-layout page */}
           {!isNoLayoutPage && <ParentComponent />}
 
-          {/* Conditionally show ParentComponentTow when scrolled */}
-          {!isNoLayoutPage && (
-            <div
-              className={`fixed top-0 left-0 w-full z-50 transition-opacity duration-500 ${
-                showParentComponentTow ? "opacity-100" : "opacity-0"
-              }`}
-            >
+          {/* Conditionally render ParentComponentTow when scrolled */}
+          {!isNoLayoutPage && showParentComponentTow && (
+            <div className="fixed top-0 left-0 w-full z-50">
               <ParentComponentTow />
             </div>
           )}
 
           {children}
 
+          {/* Show Footer unless it's a no-layout page */}
           {!isNoLayoutPage && <Footer />}
+
+          {/* Conditionally show FloatButtonClient unless it's a no-layout page */}
+          {!isNoLayoutPage && <FloatButtonClient />}
         </div>
-        <FloatButtonClient />
       </body>
     </html>
   );
