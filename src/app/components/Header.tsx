@@ -11,7 +11,7 @@ import {
 
 const Header: React.FC = () => {
   return (
-    <div className="h-[40px] bg-black text-white flex justify-center items-center">
+    <div className="hidden tablet:flex h-[40px] bg-black text-white justify-center items-center">
       {/* Email and Location */}
       <div className="w-2/4 flex justify-center items-center">
         {/* Email */}

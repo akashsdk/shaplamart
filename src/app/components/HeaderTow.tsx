@@ -74,7 +74,7 @@ const HeaderTow: React.FC = () => {
         <Link href='/' className="text-3xl font-bold font-serif">Site Name</Link>
       </div>
 
-      <div className="w-[50%] flex justify-center items-center">
+      <div className="hidden tablet:flex w-[50%] justify-center items-center">
         <Navlink
           activeClasses="active-red"
           className="text-xl p-2 rounded-lg font-serif"
@@ -463,7 +463,7 @@ const HeaderTow: React.FC = () => {
         </div>
       </div>
 
-      <div className="w-[25%] flex justify-center items-center">
+      <div className="hidden tablet:flex w-[25%] justify-center items-center">
         <div
           className="relative"
           onMouseEnter={handleMouseEnter4}
