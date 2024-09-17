@@ -69,6 +69,19 @@ const BestSelling: React.FC = () => {
           discount={15} 
           imageUrl={Img1}
           imageUrl2={Img2}
+          review={4}
+          details="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+        />
+
+<ShoppingCart
+          id="2"
+          categories="woman"
+          name="Ma. Metal Earring with Topaz"
+          originalPrice={15800} 
+          discount={15} 
+          imageUrl={Img1}
+          imageUrl2={Img2}
+          review={2}
           details="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
         />
       </div>
