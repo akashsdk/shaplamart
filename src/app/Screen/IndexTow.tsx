@@ -8,12 +8,12 @@ import Link from "next/link";
 
 const IndexTow: React.FC = () => {
   return (
-    <div className="h-full mt-10 mb-10 flex items-center justify-between">
+    <div className="h-full mt-10 mb-10 flex flex-col mobile:flex-row items-center justify-between">
       {/* First Image Container */}
-      <div className="h-[350px] w-[46.25%] ml-[2.5%] bg-gray-200 rounded-2xl overflow-hidden group flex items-center justify-start">
+      <div className="h-auto  mobile:w-[46.25%] w-[95%] mobile:ml-[2.5%] bg-gray-200 rounded-2xl overflow-hidden group flex items-center justify-start">
         <div className="absolute z-20">
           <p className=" text-3xl ml-5 font-medium text-black font-serif">
-            Suits & Formalwear
+            Suits <samp className="text-blue-600">&</samp> Formalwear
           </p>
           <div className="h-5" />
           <Link
@@ -31,10 +31,10 @@ const IndexTow: React.FC = () => {
       </div>
 
       {/* Second Image Container */}
-      <div className="h-[350px] w-[46.25%] mr-[2.5%] bg-gray-200 rounded-2xl overflow-hidden group flex items-center justify-start">
+      <div className="h-auto  mobile:w-[46.25%] w-[95%] mobile:ml-[2.5%] mt-5 mobile:mr-[2.5%] mobile:mt-0 bg-gray-200 rounded-2xl overflow-hidden group flex items-center justify-start">
         <div className="absolute  z-20">
           <p className=" text-3xl ml-5 font-medium text-black font-serif">
-            Tops & Gowns
+            Tops <samp className="text-blue-600">&</samp> Gowns
           </p>
           <div className="h-5" />
           <Link
