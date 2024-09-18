@@ -65,8 +65,8 @@ const BestSelling: React.FC = () => {
           id="1"
           categories="woman"
           name="Ma. Metal Earring with Topaz"
-          originalPrice={15800} 
-          discount={15} 
+          originalPrice={15800}
+          discount={15}
           imageUrl={Img1}
           imageUrl2={Img2}
           imageUrl3={Img1}
@@ -74,12 +74,12 @@ const BestSelling: React.FC = () => {
           details="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
         />
 
-<ShoppingCart
+        <ShoppingCart
           id="2"
           categories="woman"
           name="NuNu"
-          originalPrice={15800} 
-          discount={15} 
+          originalPrice={15800}
+          discount={15}
           imageUrl={Img1}
           imageUrl2={Img2}
           imageUrl3={Img2}

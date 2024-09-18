@@ -44,7 +44,10 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
   const [subTotal, setSubTotal] = useState(0); // State to manage subtotal
 
   // Calculate discounted price
-  const calculateDiscountedPrice = (originalPrice: number, discount: number) => {
+  const calculateDiscountedPrice = (
+    originalPrice: number,
+    discount: number
+  ) => {
     return originalPrice * (1 - discount / 100);
   };
 
@@ -98,6 +101,14 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
 
   const handleCancel = () => {
     setIsModalOpen(false);
+  };
+
+  // State to manage the currently selected image for display
+  const [selectedImage, setSelectedImage] = useState<StaticImageData>(imageUrl);
+
+  // Update the displayed image when one of the thumbnails is clicked
+  const handleImageClick = (image: StaticImageData) => {
+    setSelectedImage(image);
   };
 
   return (
@@ -172,36 +183,48 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
             {/* Product Image */}
             <div className="w-1/2 p-4">
               <Image
-                src={imageUrl}
+                src={selectedImage}
                 alt={name}
                 className="rounded-xl object-cover"
               />
 
               <div className="w-full flex justify-evenly mt-6">
-                <button>
-                    <Image src={imageUrl}
-                alt={name}
-                className="h-[80px] w-[80px] rounded-xl"/>
+                <button onClick={() => handleImageClick(imageUrl)}>
+                  <Image
+                    src={imageUrl}
+                    alt={name}
+                    className="h-[80px] w-[80px] rounded-xl"
+                  />
                 </button>
 
-                <button>
-                    <Image src={imageUrl2}
-                alt={name}
-                className="h-[80px] w-[80px] rounded-xl"/>
-                </button>
+                {imageUrl2 && (
+                  <button onClick={() => handleImageClick(imageUrl2)}>
+                    <Image
+                      src={imageUrl2}
+                      alt={name}
+                      className="h-[80px] w-[80px] rounded-xl"
+                    />
+                  </button>
+                )}
 
-                <button>
-                    <Image src={imageUrl3}
-                alt={name}
-                className="h-[80px] w-[80px] rounded-xl"/>
-                </button>
+                {imageUrl3 && (
+                  <button onClick={() => handleImageClick(imageUrl3)}>
+                    <Image
+                      src={imageUrl3}
+                      alt={name}
+                      className="h-[80px] w-[80px] rounded-xl"
+                    />
+                  </button>
+                )}
               </div>
             </div>
 
             {/* Product Details */}
             <div className="w-1/2 p-4">
               <p className="font-bold text-2xl font-serif">{name}</p>
-              <p className="font-bold font-serif opacity-60">Categories: {categories}</p>
+              <p className="font-bold font-serif opacity-60">
+                Categories: {categories}
+              </p>
               <p className="text-red-500 line-through opacity-70">
                 Tk {originalPrice}
               </p>
@@ -255,7 +278,8 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
 
                 {/* Display Subtotal */}
                 <p className="text-lg font-semibold">
-                  Sub Total: <samp className="text-red-500">{subTotal.toFixed(2)}</samp>Tk
+                  Sub Total:{" "}
+                  <samp className="text-red-500">{subTotal.toFixed(2)}</samp>Tk
                 </p>
               </div>
 
