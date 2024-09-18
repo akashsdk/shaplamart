@@ -189,7 +189,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
               />
 
               <div className="w-full flex justify-evenly mt-6">
-                <button onClick={() => handleImageClick(imageUrl)}>
+                <button onClick={() => handleImageClick(imageUrl)} className="border rounded-xl hover:opacity-60">
                   <Image
                     src={imageUrl}
                     alt={name}
@@ -198,7 +198,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
                 </button>
 
                 {imageUrl2 && (
-                  <button onClick={() => handleImageClick(imageUrl2)}>
+                  <button onClick={() => handleImageClick(imageUrl2)} className="border rounded-xl hover:opacity-60">
                     <Image
                       src={imageUrl2}
                       alt={name}
@@ -208,7 +208,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
                 )}
 
                 {imageUrl3 && (
-                  <button onClick={() => handleImageClick(imageUrl3)}>
+                  <button onClick={() => handleImageClick(imageUrl3)} className="border rounded-xl hover:opacity-60">
                     <Image
                       src={imageUrl3}
                       alt={name}
