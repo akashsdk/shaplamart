@@ -87,6 +87,9 @@ const HeaderTow: React.FC = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
+          <div className="h-[15px] w-[32px] absolute mt-[-15px] ml-[20px] bg-red-500 flex justify-center items-center text-white">
+            <p className="text-[10px]">New</p>
+          </div>
           <Navlink
             activeClasses="active-red"
             className="text-xl font-serif p-2 rounded-lg"
@@ -284,6 +287,9 @@ const HeaderTow: React.FC = () => {
           onMouseEnter={handleMouseEnter2}
           onMouseLeave={handleMouseLeave2}
         >
+          <div className="h-[15px] w-[32px] absolute mt-[-15px] ml-[50px] bg-blue-600 flex justify-center items-center text-white">
+            <p className="text-[10px]">Hot</p>
+          </div>
           <Navlink
             activeClasses="active-red"
             className="text-xl font-serif p-2 rounded-lg"
