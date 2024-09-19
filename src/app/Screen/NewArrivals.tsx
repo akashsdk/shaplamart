@@ -27,9 +27,9 @@ const NewArrivals: React.FC = () => {
       {/* Scrollable container */}
       <div
         ref={scrollRef}
-        className="w-[100%] h-[350px] flex overflow-x-scroll scroll-smooth space-x-5"
+        className="w-[100%] h-[350px] flex overflow-hidden overflow-x-scroll scroll-smooth space-x-5"
       >
-        <div className="h-[300px] w-[300px] bg-red-500 flex-shrink-0"></div>
+        <div className="tablet:w-[300px] w-[200px] bg-red-500 flex-shrink-0"></div>
         <div className="h-[300px] w-[300px] bg-blue-500 flex-shrink-0"></div>
         <div className="h-[300px] w-[300px] bg-green-500 flex-shrink-0"></div>
         <div className="h-[300px] w-[300px] bg-yellow-500 flex-shrink-0"></div>

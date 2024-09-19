@@ -1,9 +1,6 @@
 "use client";
 import React, { useRef } from "react";
 
-import Link from "next/link";
-import Image from "next/image";
-
 import ShoppingCart from "../card/ShoppingCart";
 
 import Img1 from "@/Data/Shopping-Data/metal-earring_1_600x.webp";
@@ -23,38 +20,43 @@ import Img29 from "@/Data/Shopping-Data/baby_2_600x.webp";
 const FeaturedCollection: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Function to handle scroll left and right
-  const scroll = (direction: "left" | "right") => {
+  const scrollLeft = () => {
     if (scrollRef.current) {
-      const scrollAmount = scrollRef.current.offsetWidth;
-      if (direction === "left") {
-        scrollRef.current.scrollBy({ left: -scrollAmount, behavior: "smooth" });
-      } else {
-        scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
-      }
+      scrollRef.current.scrollBy({
+        left: -300, // Adjust this value to control scroll distance
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollBy({
+        left: 300, // Adjust this value to control scroll distance
+        behavior: "smooth",
+      });
     }
   };
 
   return (
     <div className="w-full mt-5 tablet:mt-16 flex justify-center items-center flex-col">
-      <p className="text-2xl tablet:text-4xl text-blue-600 font-serif">Featured Collection</p>
+      <p className="text-2xl tablet:text-4xl text-blue-600 font-serif">
+        Featured Collection
+      </p>
 
-      {/* Parent container */}
-      <div className="w-[90%] ml-[5%] mt-4 tablet:mt-10 flex items-center relative">
-        
-        {/* Left button */}
+      <div className="mt-5 tablet:mt-10 relative w-full flex justify-center items-center">
         <button
-          onClick={() => scroll("left")}
-          className="absolute left-0 z-10 bg-gray-400 hover:bg-gray-600 text-white p-2 rounded-full"
+          onClick={scrollLeft}
+          className="absolute z-10 text-blue-500 text-[25px] left-10 border border-blue-600 p-2 rounded-lg hover:bg-blue-600 hover:text-white "
         >
-          Left
+          ◀
         </button>
 
-        {/* Child container to display 4 items */}
         <div
           ref={scrollRef}
-          className="w-full flex overflow-hidden space-x-4 overflow-x-auto scroll-smooth"
+          className="w-full h-auto flex overflow-hidden overflow-x-scroll scroll-smooth space-x-5"
         >
+          <div className="w-[205px] tablet:w-[310px] h-auto">
             <ShoppingCart
               id="W-1"
               categories="woman"
@@ -67,7 +69,9 @@ const FeaturedCollection: React.FC = () => {
               review={4}
               details="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
             />
+          </div>
 
+          <div className="w-[205px] tablet:w-[310px] h-auto">
             <ShoppingCart
               id="W-2"
               categories="woman"
@@ -80,7 +84,9 @@ const FeaturedCollection: React.FC = () => {
               review={3}
               details="Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum. Nullam"
             />
+          </div>
 
+          <div className="w-[205px] tablet:w-[310px] h-auto">
             <ShoppingCart
               id="M-1"
               categories="man"
@@ -93,7 +99,9 @@ const FeaturedCollection: React.FC = () => {
               review={0}
               details="Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestibulum volutpat pretium libero. Cras id dui. Aenean ut eros et nisl sagittis vestibulum"
             />
+          </div>
 
+          <div className="w-[205px] tablet:w-[310px] h-auto">
             <ShoppingCart
               id="M-2"
               categories="man"
@@ -106,7 +114,9 @@ const FeaturedCollection: React.FC = () => {
               review={4}
               details="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
             />
+          </div>
 
+          <div className="w-[205px] tablet:w-[310px] h-auto">
             <ShoppingCart
               id="B-1"
               categories="baby"
@@ -119,7 +129,9 @@ const FeaturedCollection: React.FC = () => {
               review={5}
               details="Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis."
             />
+          </div>
 
+          <div className="w-[205px] tablet:w-[310px] h-auto">
             <ShoppingCart
               id="B-2"
               categories="baby"
@@ -132,14 +144,14 @@ const FeaturedCollection: React.FC = () => {
               review={5}
               details="The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar."
             />
+          </div>
         </div>
 
-        {/* Right button */}
         <button
-          onClick={() => scroll("right")}
-          className="absolute right-0 z-10 bg-gray-400 hover:bg-gray-600 text-white p-2 rounded-full"
+          onClick={scrollRight}
+          className="absolute z-10 text-blue-500 text-[25px] right-10 border border-blue-600 p-2 rounded-lg hover:bg-blue-600 hover:text-white "
         >
-          Right
+          ▶
         </button>
       </div>
     </div>
