@@ -6,6 +6,7 @@ import BestSelling from "./Screen/BestSelling";
 import BestOffer from "./Screen/BestOffer";
 import FeaturedCollection from "./Screen/FeaturedCollection";
 import NewArrivals from "./Screen/NewArrivals";
+import Category from "./Screen/Category";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Index />
       <IndexTow />
       <BestSelling />
+      <Category />
       <BestOffer />
       <FeaturedCollection />
       <NewArrivals />

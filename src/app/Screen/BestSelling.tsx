@@ -51,7 +51,7 @@ const BestSelling: React.FC = () => {
     <div className="w-[95%] ml-[2.5%] mt-16">
       <div className="w-full flex justify-between items-center">
         <p className="w-[50%] tablet:w-[80%] text-2xl tablet:text-4xl text-blue-600 font-serif">
-          Best Selling
+          Best Selling 🥰
         </p>
 
         <div className="w-[50%] tablet:w-[20%] flex justify-evenly items-center">

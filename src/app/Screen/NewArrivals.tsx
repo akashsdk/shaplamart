@@ -42,7 +42,7 @@ const NewArrivals: React.FC = () => {
   return (
     <div className="w-full mt-5 tablet:mt-16 flex justify-center items-center flex-col">
       <p className="text-2xl tablet:text-4xl text-blue-600 font-serif">
-      New Arrivals
+      New Arrivals 🔥
       </p>
 
       <div className="mt-5 tablet:mt-10 relative w-full flex justify-center items-center">
