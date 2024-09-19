@@ -4,6 +4,8 @@ import Index from "./Screen/Index";
 import IndexTow from "./Screen/IndexTow";
 import BestSelling from "./Screen/BestSelling";
 import BestOffer from "./Screen/BestOffer";
+import FeaturedCollection from "./Screen/FeaturedCollection";
+import NewArrivals from "./Screen/NewArrivals";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <IndexTow />
       <BestSelling />
       <BestOffer />
+      <FeaturedCollection />
+      <NewArrivals />
     </div>
   );
 }

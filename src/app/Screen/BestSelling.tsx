@@ -50,11 +50,11 @@ const BestSelling: React.FC = () => {
   return (
     <div className="w-[95%] ml-[2.5%] mt-16">
       <div className="w-full flex justify-between items-center">
-        <p className="text-2xl tablet:text-4xl text-blue-600 font-serif">
+        <p className="w-[50%] tablet:w-[80%] text-2xl tablet:text-4xl text-blue-600 font-serif">
           Best Selling
         </p>
 
-        <div className="w-[20%] flex justify-between items-center">
+        <div className="w-[50%] tablet:w-[20%] flex justify-evenly items-center">
           <div className="flex flex-col items-center">
             <button
               className={tabStyles("Men")}

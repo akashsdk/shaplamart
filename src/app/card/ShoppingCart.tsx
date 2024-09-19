@@ -114,7 +114,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
   return (
     <div
       key={id}
-      className="relative h-[400px] w-[300px] mb-3 flex flex-col justify-start items-center group"
+      className="relative h-[400px] tablet:w-[300px] w-[200px] mb-3 flex flex-col justify-start items-center group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -122,25 +122,25 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
         <Image
           src={isHovered && imageUrl2 ? imageUrl2 : imageUrl}
           alt={name}
-          className="rounded-xl h-[280px] w-[280px] object-cover"
+          className="rounded-xl h-[280px] w-[180px] tablet:w-[280px] object-cover"
         />
 
         {/* Icon Button Overlay */}
         <div className="absolute w-full bottom-3 bg-transparent opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-500">
           <div className="w-[80%] flex justify-evenly">
             <button
-              className="h-[50px] w-[50px] border border-blue-600 rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              className="h-[30px] w-[30px] tablet:h-[50px] tablet:w-[50px] border border-blue-600 rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
               onClick={showModal}
             >
-              <EyeOutlined className="text-[25px]" />
+              <EyeOutlined className="tablet:text-[25px] text-[18px]" />
             </button>
 
-            <button className="h-[50px] w-[50px] border border-blue-600 rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
-              <ShoppingCartOutlined className="text-[25px]" />
+            <button className="h-[30px] w-[30px] tablet:h-[50px] tablet:w-[50px] border border-blue-600 rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <ShoppingCartOutlined className="tablet:text-[25px] text-[18px]" />
             </button>
 
-            <button className="h-[50px] w-[50px] border border-blue-600 rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
-              <HeartOutlined className="text-[25px]" />
+            <button className="h-[30px] w-[30px] tablet:h-[50px] tablet:w-[50px] border border-blue-600 rounded-lg text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <HeartOutlined className="tablet:text-[25px] text-[18px]" />
             </button>
           </div>
         </div>
@@ -179,9 +179,9 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
         footer={null}
       >
         <div className="h-auto">
-          <div className="flex">
+          <div className="flex flex-col tablet:flex-row">
             {/* Product Image */}
-            <div className="w-1/2 p-4">
+            <div className="w-full tablet:w-1/2 p-4">
               <Image
                 src={selectedImage}
                 alt={name}
@@ -189,7 +189,10 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
               />
 
               <div className="w-full flex justify-evenly mt-6">
-                <button onClick={() => handleImageClick(imageUrl)} className="border rounded-xl hover:opacity-60">
+                <button
+                  onClick={() => handleImageClick(imageUrl)}
+                  className="border rounded-xl hover:opacity-60"
+                >
                   <Image
                     src={imageUrl}
                     alt={name}
@@ -198,7 +201,10 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
                 </button>
 
                 {imageUrl2 && (
-                  <button onClick={() => handleImageClick(imageUrl2)} className="border rounded-xl hover:opacity-60">
+                  <button
+                    onClick={() => handleImageClick(imageUrl2)}
+                    className="border rounded-xl hover:opacity-60"
+                  >
                     <Image
                       src={imageUrl2}
                       alt={name}
@@ -208,7 +214,10 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
                 )}
 
                 {imageUrl3 && (
-                  <button onClick={() => handleImageClick(imageUrl3)} className="border rounded-xl hover:opacity-60">
+                  <button
+                    onClick={() => handleImageClick(imageUrl3)}
+                    className="border rounded-xl hover:opacity-60"
+                  >
                     <Image
                       src={imageUrl3}
                       alt={name}
@@ -220,7 +229,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
             </div>
 
             {/* Product Details */}
-            <div className="w-1/2 p-4">
+            <div className="w-full tablet:w-1/2 p-4">
               <p className="font-bold text-2xl font-serif">{name}</p>
               <p className="font-bold font-serif opacity-60">
                 Categories: {categories}

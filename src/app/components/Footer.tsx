@@ -1,5 +1,7 @@
 "use client";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import {
   FacebookOutlined,
   TwitterOutlined,
@@ -13,14 +15,14 @@ import Img2 from "@/Data/Icon/rocket.png";
 import Img3 from "@/Data/Icon/Nagad.png";
 import Img4 from "@/Data/Icon/upay.png";
 import Img5 from "@/Data/Icon/cellfin.png";
-import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
     <div className="w-full h-auto bg-gray-200 ">
-      <div className="w-full flex mb-16">
-        <div className="w-1/2">
-          <div className="w-[80%] ml-[10%] mt-16 flex flex-col items-start">
+      <div className="w-full tablet:flex mb-7 tablet:mb-16 ">
+        <div className="h-10 tablet:hidden"/>
+        <div className="w-full tablet:w-1/2 tablet:mt-16 mt-0">
+          <div className="w-[80%] ml-[10%] flex flex-col items-start">
             <p className="text-2xl font-serif">About Us.</p>
             <p className="mt-4 opacity-60 w-[90%]">
               Shapla Mart E-Commerce is a dynamic and innovative online retail
@@ -74,17 +76,72 @@ const Footer: React.FC = () => {
             <p className="mt-4 text-lg font-serif">Guaranteed safe checkout</p>
 
             <div className="flex mt-2">
-            <Image alt="" src={Img1} className="h-[40px] w-[55px] mr-2"/>
-            <Image alt="" src={Img2} className="h-[40px] w-[55px] mr-2"/>
-            <Image alt="" src={Img3} className="h-[40px] w-[55px] mr-2"/>
-            <Image alt="" src={Img4} className="h-[40px] w-[55px] mr-2"/>
-            <Image alt="" src={Img5} className="h-[40px] w-[55px] mr-2"/>
+              <Image alt="" src={Img1} className="h-[40px] w-[55px] mr-2" />
+              <Image alt="" src={Img2} className="h-[40px] w-[55px] mr-2" />
+              <Image alt="" src={Img3} className="h-[40px] w-[55px] mr-2" />
+              <Image alt="" src={Img4} className="h-[40px] w-[55px] mr-2" />
+              <Image alt="" src={Img5} className="h-[40px] w-[55px] mr-2" />
             </div>
           </div>
         </div>
 
-        <div className="w-1/2">
-        left
+        <div className="w-full tablet:w-1/2 flex justify-evenly tablet:mt-16 mt-7">
+          <div className="flex flex-col">
+            <p className="text-2xl font-serif">Quick Link</p>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              My Account
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              My Cart
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              Wishlist
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              Gift Card
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              Need Help?
+            </Link>
+          </div>
+
+          <div className="flex flex-col">
+            <p className="text-2xl font-serif">Information</p>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              About us
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              Contact
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              Blogs
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              Size Chart
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              FAQ
+            </Link>
+          </div>
+
+          <div className="flex flex-col">
+            <p className="text-2xl font-serif">Policies</p>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+               Privacy Policy
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+               Refund Policy
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+              Terms of Service
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+               Shipping Policy
+            </Link>
+            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+               Contact Information
+            </Link>
+          </div>
         </div>
       </div>
 
