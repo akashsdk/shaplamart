@@ -7,6 +7,8 @@ import BestOffer from "./Screen/BestOffer";
 import FeaturedCollection from "./Screen/FeaturedCollection";
 import NewArrivals from "./Screen/NewArrivals";
 import Category from "./Screen/Category";
+import LatestBlog from "./Screen/LatestBlog";
+import AboutUs from "./about-us/page";
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <BestOffer />
       <FeaturedCollection />
       <NewArrivals />
+      <LatestBlog />
+      <AboutUs />
     </div>
   );
 }
