@@ -15,7 +15,7 @@ import Icon10 from '@/Data/Icon/makeup-pouch.png';
 import Icon11 from '@/Data/Icon/fashion-style.png';
 import Icon12 from '@/Data/Icon/jewelry.png';
 import Icon13 from '@/Data/Icon/loafers.png';
-import Icon14 from '@/Data/Icon/makeup-pouch.png';
+import Icon14 from '@/Data/Icon/skincare.png';
 import Icon15 from '@/Data/Icon/high-heels.png';
 import Icon16 from '@/Data/Icon/delivery-box.png';
 
@@ -28,7 +28,7 @@ const Category: React.FC = () => {
         Featured Categories
       </p>
 
-      <div className=" mt-10 grid grid-cols-2 tablet:grid-cols-6 laptop:grid-cols-8 gap-6">
+      <div className=" mt-10 grid grid-cols-3 tablet:grid-cols-6 laptop:grid-cols-8 gap-6">
         <CategoryCard image={Icon1} categoryName="Featured Product" link="/shop" />
         <CategoryCard image={Icon2} categoryName="Accessories" link="/shop" />
         <CategoryCard image={Icon3} categoryName="New Arrivals" link="/shop" />
