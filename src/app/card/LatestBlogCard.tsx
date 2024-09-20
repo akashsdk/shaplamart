@@ -1,32 +1,44 @@
 "use client";
 import React from "react";
+import Image, { StaticImageData } from "next/image";
+
+import { CalendarOutlined } from "@ant-design/icons";
+import Link from "next/link";
 
 interface LatestBlogCardProps {
   title: string;
-  description: string;
   date: string;
-  imageUrl: string;
+  imageUrl: StaticImageData;
 }
 
 const LatestBlogCard: React.FC<LatestBlogCardProps> = ({
   title,
-  description,
   date,
   imageUrl,
 }) => {
   return (
-    <div className="w-[300px] h-auto m-4 rounded-lg shadow-lg overflow-hidden">
-      <img
-        src={imageUrl}
-        alt={title}
-        className="w-full h-[200px] object-cover"
-      />
-      <div className="p-4">
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-sm text-gray-600 mb-4">{description}</p>
-        <p className="text-xs text-gray-400">{date}</p>
+    <Link href="/blog" >
+        <div className="w-[200px] tablet:w-[300px] h-auto group mb-6">
+      <Image alt="" src={imageUrl} className="mt-2 rounded-xl" />
+
+      <div className="mt-5 flex opacity-60">
+        <CalendarOutlined />
+        <p className="ml-3">{date}</p>
       </div>
-    </div>
+      <div className="mt-3">
+        <h3 className="text-sm tablet:text-xl text-justify mb-2 font-serif group-hover:text-blue-600">
+          {title}
+        </h3>
+      </div>
+
+      <Link
+        href="/blog"
+        className=" text-blue-600 font-serif opacity-80 hover:opacity-100"
+      >
+        Read More...
+      </Link>
+      </div>
+    </Link>
   );
 };
 

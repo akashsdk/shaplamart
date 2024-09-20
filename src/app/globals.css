@@ -78,3 +78,34 @@ svg text {
     transform: translateY(-15px);
   }
 }
+
+
+/* Banner */
+@keyframes marquee-loop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-60%);
+  }
+}
+
+.marquee {
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.marquee-content {
+  display: inline-block;
+  padding-right: 100%; /* Ensures space for the second copy */
+  animation: marquee-loop 20s linear infinite;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+
+
+

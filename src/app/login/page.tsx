@@ -35,7 +35,7 @@ const LogIn: React.FC = () => {
   return (
     <div className="w-full flex justify-center items-center">
       {/* Left-Box */}
-      <div className="h-screen w-full md:w-[50%] flex justify-center items-center flex-col bg-gray-50 p-8">
+      <div className="h-screen w-full tablet:w-[50%] flex justify-center items-center flex-col bg-gray-50 p-8">
         <p className="font-medium text-4xl font-mono bounce-animation">
           Sign In
         </p>
@@ -120,14 +120,14 @@ const LogIn: React.FC = () => {
 
         <Link
           href="/signup"
-          className="md:hidden w-[80%] text-center mt-5 py-2 px-4 border-[3px] border-indigo-700 rounded-md shadow-sm text-lg font-medium text-indigo-700 hover:text-white bg-transparent hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+          className="tablet:hidden w-[80%] text-center mt-5 py-2 px-4 border-[3px] border-indigo-700 rounded-md shadow-sm text-lg font-medium text-indigo-700 hover:text-white bg-transparent hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
         >
           Sign Up
         </Link>
       </div>
 
       {/* Right-Box */}
-      <div className="h-screen w-[50%] hidden md:flex justify-center items-center flex-col bg-indigo-600 text-white p-8 rounded-tl-[15%] rounded-bl-[15%] overflow-hidden">
+      <div className="h-screen w-[50%] hidden tablet:flex justify-center items-center flex-col bg-indigo-600 text-white p-8 rounded-tl-[15%] rounded-bl-[15%] overflow-hidden">
         <Image alt="Sign Up" src={img1} className="h-[300px] mt-[-100px]" />
 
         <svg className="w-[80%] h-auto" viewBox="0 0 600 100">

@@ -9,6 +9,7 @@ import NewArrivals from "./Screen/NewArrivals";
 import Category from "./Screen/Category";
 import LatestBlog from "./Screen/LatestBlog";
 import AboutUs from "./about-us/page";
+import Banner from "./Screen/Banner";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <BestOffer />
       <FeaturedCollection />
       <NewArrivals />
+      <Banner />
       <LatestBlog />
       <AboutUs />
     </div>
