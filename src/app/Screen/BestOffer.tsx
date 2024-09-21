@@ -1,18 +1,18 @@
 "use client";
 import React, { useEffect, useState } from "react";
-
 import Link from "next/link";
 import Image from "next/image";
 import Img1 from "@/Data/Shopping-Data/Countdown_banner_4_570x.webp";
 
-const BestOffer: React.FC = () => {
-  const initialTime = {
-    days: 50,
-    hours: 20,
-    minutes: 49,
-    seconds: 59,
-  };
+// Move initialTime outside of the component
+const initialTime = {
+  days: 50,
+  hours: 20,
+  minutes: 49,
+  seconds: 59,
+};
 
+const BestOffer: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(initialTime);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const BestOffer: React.FC = () => {
           seconds = 59;
           days--;
         } else {
-          return initialTime;
+          return initialTime; // Reset the time when it finishes
         }
 
         return { days, hours, minutes, seconds };
@@ -43,14 +43,13 @@ const BestOffer: React.FC = () => {
     }, 1000);
 
     return () => clearInterval(countdown);
-  }, []);
+  }, []); // Empty dependency array because `initialTime` is static now
 
   return (
     <div className="w-full h-auto flex mt-10 mb-10 bg-gray-200">
       <div className="w-[95%] ml-[2.5%] tablet:ml-0 tablet:w-1/2 h-[550px] flex flex-col justify-center items-center">
         <p className="text-3xl tablet:text-5xl font-medium text-black font-serif">
-          Best Offer - Up to{" "}
-          <samp className="text-blue-600 font-serif">50%</samp>
+          Best Offer - Up to <samp className="text-blue-600 font-serif">50%</samp>
         </p>
 
         <p className="mt-5 opacity-60">

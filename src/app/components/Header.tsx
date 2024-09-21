@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   MailOutlined,
@@ -15,11 +16,14 @@ const Header: React.FC = () => {
       {/* Email and Location */}
       <div className="w-2/4 flex justify-center items-center">
         {/* Email */}
-        <a href="mailto:example@example.com" className="flex items-center opacity-60 hover:opacity-90 hover:text-blue-500">
+        <a
+          href="mailto:example@example.com"
+          className="flex items-center opacity-60 hover:opacity-90 hover:text-blue-500"
+        >
           <MailOutlined />
           <p className="ml-1 font-serif">example@example.com</p>
         </a>
-        
+
         {/* Location */}
         <a
           href="https://maps.google.com/?q=City+State+ZIP+Code"
@@ -42,7 +46,7 @@ const Header: React.FC = () => {
           rel="noopener noreferrer"
           className="mr-2 opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
         >
-          <FacebookOutlined className="text-[18px]"/>
+          <FacebookOutlined className="text-[18px]" />
         </a>
         <a
           href="https://twitter.com"
@@ -50,7 +54,7 @@ const Header: React.FC = () => {
           rel="noopener noreferrer"
           className="mr-2 opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
         >
-          <TwitterOutlined className="text-[18px]"/>
+          <TwitterOutlined className="text-[18px]" />
         </a>
         <a
           href="https://instagram.com"
@@ -58,7 +62,7 @@ const Header: React.FC = () => {
           rel="noopener noreferrer"
           className="mr-2 opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
         >
-          <InstagramOutlined className="text-[18px]"/>
+          <InstagramOutlined className="text-[18px]" />
         </a>
         <a
           href="https://youtube.com"
@@ -66,7 +70,7 @@ const Header: React.FC = () => {
           rel="noopener noreferrer"
           className="mr-2 opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
         >
-          <YoutubeOutlined className="text-[18px]"/>
+          <YoutubeOutlined className="text-[18px]" />
         </a>
         <a
           href="https://tiktok.com"
@@ -74,7 +78,7 @@ const Header: React.FC = () => {
           rel="noopener noreferrer"
           className="mr-2 opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
         >
-          <TikTokOutlined className="text-[18px]"/>
+          <TikTokOutlined className="text-[18px]" />
         </a>
       </div>
     </div>

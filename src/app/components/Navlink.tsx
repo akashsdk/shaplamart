@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
@@ -16,20 +15,19 @@ const Navlink: React.FC<NavlinkProps> = ({
   text,
   activeClasses,
   className = "",
-  onClick, // Added onClick prop
+  onClick,
 }) => {
   const path = usePathname();
-  const isActive = path === href || (href === '/services' && path.startsWith('/services'));
+  const isActive =
+    path === href || (href === "/services" && path.startsWith("/services"));
 
   const combinedClasses = `${
     isActive && activeClasses ? activeClasses + " " : ""
   }text-colorF2 ${className}`.trim();
 
   return (
-    <Link href={href} legacyBehavior>
-      <a className={combinedClasses} onClick={onClick}>
-        {text}
-      </a>
+    <Link href={href} className={combinedClasses} onClick={onClick}>
+      {text}
     </Link>
   );
 };
