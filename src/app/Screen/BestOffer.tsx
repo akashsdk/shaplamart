@@ -48,8 +48,8 @@ const BestOffer: React.FC = () => {
   return (
     <div className="w-full h-auto flex mt-10 mb-10 bg-gray-200">
       <div className="w-[95%] ml-[2.5%] tablet:ml-0 tablet:w-1/2 h-[550px] flex flex-col justify-center items-center">
-        <p className="text-3xl tablet:text-5xl font-medium text-black font-serif">
-          Best Offer - Up to <samp className="text-blue-600 font-serif">50%</samp>
+        <p className="text-3xl tablet:text-5xl font-medium font-serif text-blue-600">
+          Best Offer - Up to <samp className="text-red-600 font-serif">50%</samp>
         </p>
 
         <p className="mt-5 opacity-60">

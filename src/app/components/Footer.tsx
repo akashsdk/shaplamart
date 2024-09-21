@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
   return (
     <div className="w-full h-auto bg-gray-200 ">
       <div className="w-full tablet:flex mb-7 tablet:mb-16 ">
-        <div className="h-10 tablet:hidden"/>
+        <div className="h-10 tablet:hidden" />
         <div className="w-full tablet:w-1/2 tablet:mt-16 mt-0">
           <div className="w-[80%] ml-[10%] flex flex-col items-start">
             <p className="text-2xl font-serif">About Us.</p>
@@ -107,39 +107,63 @@ const Footer: React.FC = () => {
 
           <div className="flex flex-col">
             <p className="text-2xl font-serif">Information</p>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link
+              href="/about-us"
+              className="mt-5 opacity-70 hover:text-blue-600"
+            >
               About us
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link
+              href="/contact"
+              className="mt-5 opacity-70 hover:text-blue-600"
+            >
               Contact
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link href="/blog" className="mt-5 opacity-70 hover:text-blue-600">
               Blogs
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link
+              href="/size-chart"
+              className="mt-5 opacity-70 hover:text-blue-600"
+            >
               Size Chart
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link href="/faq" className="mt-5 opacity-70 hover:text-blue-600">
               FAQ
             </Link>
           </div>
 
           <div className="flex flex-col">
             <p className="text-2xl font-serif">Policies</p>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
-               Privacy Policy
+            <Link
+              href="/policy/privacy-policy"
+              className="mt-5 opacity-70 hover:text-blue-600"
+            >
+              Privacy Policy
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
-               Refund Policy
+            <Link
+              href="/policy/refund-policy"
+              className="mt-5 opacity-70 hover:text-blue-600"
+            >
+              Refund Policy
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link
+              href="/policy/terms-service"
+              className="mt-5 opacity-70 hover:text-blue-600"
+            >
               Terms of Service
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
-               Shipping Policy
+            <Link
+              href="/policy/shipping-policy"
+              className="mt-5 opacity-70 hover:text-blue-600"
+            >
+              Shipping Policy
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
-               Contact Information
+            <Link
+              href="/contact"
+              className="mt-5 opacity-70 hover:text-blue-600"
+            >
+              Contact Information
             </Link>
           </div>
         </div>
