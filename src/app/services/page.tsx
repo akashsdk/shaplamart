@@ -105,7 +105,7 @@ const ServicesComponent: React.FC<{
   onLearnMore: () => void;
 }> = ({ icon, name, datals, onLearnMore }) => {
   return (
-    <div className="w-[350px] h-[350px] border rounded-xl flex flex-col justify-center items-center">
+    <div className="w-[350px] h-[350px] border rounded-xl flex flex-col justify-center items-center hover:shadow-xl">
       <Image alt={name} src={icon} className="w-15 h-15" />
       <p className="mt-4 text-3xl font-serif">{name}</p>
       <p className="w-[90%] text-center mt-3 opacity-70">{datals}</p>
