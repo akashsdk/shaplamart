@@ -21,15 +21,16 @@ const Services: React.FC = () => {
   const warning = () => {
     messageApi.open({
       type: "warning",
-      content: "Coming Soon !! We're working hard to bring you something amazing. Stay tuned!",
+      content:
+        "Coming Soon !! We're working hard to bring you something amazing. Stay tuned!",
     });
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full flex justify-center items-center flex-col">
       {contextHolder}
       <HeaderCart pageName="Services" />
-      <div className="w-full mt-5 tablet:mt-10 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6">
+      <div className="mt-5 tablet:mt-10 mb-10 tablet:mb-16 grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 gap-6 tablet:gap-10">
         <ServicesComponent
           icon={Icon1}
           name="T-shirt Design"
@@ -105,11 +106,23 @@ const ServicesComponent: React.FC<{
   onLearnMore: () => void;
 }> = ({ icon, name, datals, onLearnMore }) => {
   return (
-    <div className="w-[350px] h-[350px] border rounded-xl flex flex-col justify-center items-center hover:shadow-xl">
-      <Image alt={name} src={icon} className="w-15 h-15" />
-      <p className="mt-4 text-3xl font-serif">{name}</p>
-      <p className="w-[90%] text-center mt-3 opacity-70">{datals}</p>
-      <button className="mt-5 hover:text-blue-600" onClick={onLearnMore}>
+    <div className="tablet:w-[350px] w-[90%] ml-[5%] tablet:ml-0 tablet:h-[350px] h-auto border rounded-xl flex flex-col justify-center items-center hover:shadow-xl">
+      <div className="w-full flex tablet:flex-col justify-center items-center">
+        <div className="w-[20%] ml-[5%] tablet:w-full tablet:ml-0 tablet:flex justify-center items-center">
+          <Image alt={name} src={icon} className="w-15 h-15" />
+        </div>
+
+        <div className="w-[75%] tablet:w-full tablet:flex justify-center items-center tablet:flex-col">
+          <p className="mt-4 text-3xl font-serif">{name}</p>
+          <p className="w-[98%] tablet:w-[90%] tablet:text-center mt-3 opacity-70">
+            {datals}
+          </p>
+        </div>
+      </div>
+      <button
+        className="mt-5 mb-5 tablet:mb-0 hover:text-blue-600"
+        onClick={onLearnMore}
+      >
         Learn More
       </button>
     </div>
