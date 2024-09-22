@@ -88,7 +88,7 @@ const Footer: React.FC = () => {
         <div className="w-full tablet:w-1/2 flex justify-evenly tablet:mt-16 mt-7">
           <div className="flex flex-col">
             <p className="text-2xl font-serif">Quick Link</p>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link href="/account" className="mt-5 opacity-70 hover:text-blue-600">
               My Account
             </Link>
             <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
@@ -97,10 +97,10 @@ const Footer: React.FC = () => {
             <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
               Wishlist
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link href="/shop" className="mt-5 opacity-70 hover:text-blue-600">
               Gift Card
             </Link>
-            <Link href="/" className="mt-5 opacity-70 hover:text-blue-600">
+            <Link href="/contact" className="mt-5 opacity-70 hover:text-blue-600">
               Need Help?
             </Link>
           </div>
