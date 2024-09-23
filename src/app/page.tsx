@@ -8,8 +8,8 @@ import FeaturedCollection from "./Screen/FeaturedCollection";
 import NewArrivals from "./Screen/NewArrivals";
 import Category from "./Screen/Category";
 import LatestBlog from "./Screen/LatestBlog";
-import AboutUs from "./about-us/page";
 import Banner from "./Screen/Banner";
+import AboutUsScreen from "./Screen/AboutUsScreen";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
       <NewArrivals />
       <Banner />
       <LatestBlog />
-      <AboutUs />
+      <AboutUsScreen />
     </div>
   );
 }
