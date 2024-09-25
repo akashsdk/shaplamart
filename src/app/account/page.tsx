@@ -1,11 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import { Modal, message } from "antd";
+import { Modal, message, Input, Form, Button } from "antd";
 import Image, { StaticImageData } from "next/image";
 import { DeleteOutlined, CopyOutlined, FormOutlined } from "@ant-design/icons";
 
 import profileImg from "@/Data/Img/profile.png";
-
 import Img1 from "@/Data/Shopping-Data/bag_1.webp";
 import Img2 from "@/Data/Shopping-Data/baby_2_600x.webp";
 import Img3 from "@/Data/Shopping-Data/sunglass_1.webp";
@@ -44,12 +43,8 @@ const Account: React.FC = () => {
     },
   ]);
 
-  const handleDelete = (id: string) => {
-    setOrderHistory(orderHistory.filter((order) => order.id !== id));
-    message.success("Order deleted successfully.");
-  };
-
-  const data = {
+  // Profile data
+  const [profileData, setProfileData] = useState({
     name: "Mr. Tasnim Shahriar",
     email: "example@gmail.com",
     address: "Los Angeles, California, USA",
@@ -57,6 +52,35 @@ const Account: React.FC = () => {
     country: "Los Angeles",
     city: "California, USA",
     postCode: "ERT 62574",
+  });
+
+  // State for modal visibility
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  // Temporary state for form inputs
+  const [form] = Form.useForm();
+
+  const handleDelete = (id: string) => {
+    setOrderHistory(orderHistory.filter((order) => order.id !== id));
+    message.success("Order deleted successfully.");
+  };
+
+  // Show and hide modal
+  const showModal = () => {
+    setIsModalVisible(true);
+    // Pre-fill form with existing data
+    form.setFieldsValue(profileData);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
+  // Update profile information
+  const handleUpdateProfile = (values: typeof profileData) => {
+    setProfileData(values);
+    message.success("Profile updated successfully.");
+    setIsModalVisible(false);
   };
 
   return (
@@ -91,12 +115,12 @@ const Account: React.FC = () => {
               className="h-[80px] w-[80px] rounded-full"
             />
             <div className="ml-4">
-              <p className="text-lg font-serif">{data.name}</p>
-              <p className="text-sm opacity-70">{data.email}</p>
-              <p className="text-sm opacity-70">{data.address}</p>
+              <p className="text-lg font-serif">{profileData.name}</p>
+              <p className="text-sm opacity-70">{profileData.email}</p>
+              <p className="text-sm opacity-70">{profileData.address}</p>
             </div>
 
-            <button className=" hover:text-red-500">
+            <button onClick={showModal} className="hover:text-red-500">
               <FormOutlined className="text-[20px]" />
             </button>
           </div>
@@ -106,37 +130,79 @@ const Account: React.FC = () => {
               <div className="flex justify-between">
                 <p className="text-xl font-serif">Address</p>
 
-                <button className=" hover:text-red-500">
+                <button onClick={showModal} className="hover:text-red-500">
                   <FormOutlined className="text-[20px]" />
                 </button>
               </div>
               <div className="mt-5 w-full flex ">
                 <div>
                   <p>Country</p>
-                  <p className="opacity-70 mt-3">{data.country}</p>
+                  <p className="opacity-70 mt-3">{profileData.country}</p>
                 </div>
 
                 <div className="ml-[40%]">
                   <p>City / State</p>
-                  <p className="opacity-70 mt-3">{data.city}</p>
+                  <p className="opacity-70 mt-3">{profileData.city}</p>
                 </div>
               </div>
 
               <div className="mt-5 w-full flex">
                 <div>
                   <p>Postal Code</p>
-                  <p className="opacity-70 mt-3">{data.postCode}</p>
+                  <p className="opacity-70 mt-3">{profileData.postCode}</p>
                 </div>
 
                 <div className="ml-[40%]">
                   <p>Phone No</p>
-                  <p className="opacity-70 mt-3">{data.phone}</p>
+                  <p className="opacity-70 mt-3">{profileData.phone}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Modal for updating profile */}
+      <Modal
+        title="Update Profile"
+        open={isModalVisible}
+        onCancel={handleCancel}
+        footer={null}
+      >
+        <Form
+          form={form}
+          layout="vertical"
+          onFinish={handleUpdateProfile}
+          initialValues={profileData}
+        >
+          <Form.Item label="Name" name="name">
+            <Input />
+          </Form.Item>
+          <Form.Item label="Email" name="email">
+            <Input />
+          </Form.Item>
+          <Form.Item label="Address" name="address">
+            <Input />
+          </Form.Item>
+          <Form.Item label="Phone" name="phone">
+            <Input />
+          </Form.Item>
+          <Form.Item label="Country" name="country">
+            <Input />
+          </Form.Item>
+          <Form.Item label="City / State" name="city">
+            <Input />
+          </Form.Item>
+          <Form.Item label="Postal Code" name="postCode">
+            <Input />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Update
+            </Button>
+          </Form.Item>
+        </Form>
+      </Modal>
     </div>
   );
 };
