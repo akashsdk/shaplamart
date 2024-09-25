@@ -2,7 +2,9 @@
 import React, { useState } from "react";
 import { Modal, message } from "antd";
 import Image, { StaticImageData } from "next/image";
-import { DeleteOutlined, CopyOutlined } from "@ant-design/icons";
+import { DeleteOutlined, CopyOutlined, FormOutlined } from "@ant-design/icons";
+
+import profileImg from "@/Data/Img/profile.png";
 
 import Img1 from "@/Data/Shopping-Data/bag_1.webp";
 import Img2 from "@/Data/Shopping-Data/baby_2_600x.webp";
@@ -26,7 +28,7 @@ const Account: React.FC = () => {
       productName: "Baby Handwork Frock",
       orderDate: "01-13-2024",
       deliveryDate: "01-19-2024",
-      orderNumber: "#123Gh8906",
+      orderNumber: "#123Gh89006",
       totalItem: "01",
       totalPrice: "2030",
     },
@@ -45,6 +47,16 @@ const Account: React.FC = () => {
   const handleDelete = (id: string) => {
     setOrderHistory(orderHistory.filter((order) => order.id !== id));
     message.success("Order deleted successfully.");
+  };
+
+  const data = {
+    name: "Mr. Tasnim Shahriar",
+    email: "example@gmail.com",
+    address: "Los Angeles, California, USA",
+    phone: "0123456789",
+    country: "Los Angeles",
+    city: "California, USA",
+    postCode: "ERT 62574",
   };
 
   return (
@@ -70,7 +82,59 @@ const Account: React.FC = () => {
         </div>
 
         <div className="tablet:w-[40%] tablet:mt-10">
-          <p className="text-xl tablet:text-2xl font-serif">Account Details</p>
+          <p className="text-xl tablet:text-2xl font-serif">My Profile</p>
+
+          <div className="mt-5 flex items-center justify-between border rounded-md p-3">
+            <Image
+              alt="Profile Picture"
+              src={profileImg}
+              className="h-[80px] w-[80px] rounded-full"
+            />
+            <div className="ml-4">
+              <p className="text-lg font-serif">{data.name}</p>
+              <p className="text-sm opacity-70">{data.email}</p>
+              <p className="text-sm opacity-70">{data.address}</p>
+            </div>
+
+            <button className=" hover:text-red-500">
+              <FormOutlined className="text-[20px]" />
+            </button>
+          </div>
+
+          <div className="mt-5 flex items-center justify-between border rounded-md p-3">
+            <div className="w-full">
+              <div className="flex justify-between">
+                <p className="text-xl font-serif">Address</p>
+
+                <button className=" hover:text-red-500">
+                  <FormOutlined className="text-[20px]" />
+                </button>
+              </div>
+              <div className="mt-5 w-full flex ">
+                <div>
+                  <p>Country</p>
+                  <p className="opacity-70 mt-3">{data.country}</p>
+                </div>
+
+                <div className="ml-[40%]">
+                  <p>City / State</p>
+                  <p className="opacity-70 mt-3">{data.city}</p>
+                </div>
+              </div>
+
+              <div className="mt-5 w-full flex">
+                <div>
+                  <p>Postal Code</p>
+                  <p className="opacity-70 mt-3">{data.postCode}</p>
+                </div>
+
+                <div className="ml-[40%]">
+                  <p>Phone No</p>
+                  <p className="opacity-70 mt-3">{data.phone}</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -150,14 +214,14 @@ const OrderHistoryComponent: React.FC<{
           >
             Order Num:{" "}
             <span className="text-red-400 cursor-pointer">{orderNumber}</span>
-            {/* {isHovered && ( */}
+            {isHovered && (
               <button
-                className="absolute ml-2 px-2 py-1 bottom-1 flex bg-gray-200 hover:bg-gray-300 text-sm rounded-md"
+                className="absolute px-2 py-1 bottom-1 ml-[175px] flex items-center justify-evenly bg-gray-200 hover:bg-gray-300 text-sm rounded-md"
                 onClick={handleCopy}
               >
                 <CopyOutlined /> Copy
               </button>
-            
+            )}
           </p>
           <p className="text-sm">
             Total Price: <span className=" text-red-400">{totalPrice}</span> tk
