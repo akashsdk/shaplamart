@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
-import { DeleteOutlined } from "@ant-design/icons";
+import { DeleteOutlined, ShoppingCartOutlined } from "@ant-design/icons";
 import { message, Modal } from "antd";
 
 // Sample images for wishlist items
@@ -39,6 +39,10 @@ const Wishlist: React.FC = () => {
     message.success("Item removed from wishlist.");
   };
 
+  const handleOrder = (productName: string) => {
+    message.success(`${productName} has been added to your cart!`);
+  };
+
   const showDeleteConfirm = (id: string) => {
     setSelectedItem(id);
     setIsModalOpen(true);
@@ -74,9 +78,20 @@ const Wishlist: React.FC = () => {
                 <p className="text-lg text-red-500">{item.price} tk</p>
               </div>
             </div>
-            <button onClick={() => showDeleteConfirm(item.id)}>
-              <DeleteOutlined className="text-[24px] text-red-400 hover:text-red-600" />
-            </button>
+            <div className="flex items-center">
+              {/* Order Now Button */}
+              <button
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg mr-4"
+                onClick={() => handleOrder(item.productName)}
+              >
+                <ShoppingCartOutlined className="mr-2" />
+                Order Now
+              </button>
+              {/* Delete Button */}
+              <button onClick={() => showDeleteConfirm(item.id)}>
+                <DeleteOutlined className="text-[24px] text-red-400 hover:text-red-600" />
+              </button>
+            </div>
           </div>
         ))
       ) : (
