@@ -94,7 +94,7 @@ const Account: React.FC = () => {
         <div className="w-full tablet:w-[60%] tablet:mt-10 mt-5 ">
           <p className="text-xl tablet:text-2xl font-serif">Order History</p>
 
-          <div className="w-[90%] mb-10">
+          <div className="w-full tablet:w-[90%]  mb-10">
             {orderHistory.map((order) => (
               <OrderHistoryComponent
                 key={order.id}
@@ -263,7 +263,7 @@ const OrderHistoryComponent: React.FC<{
         />
 
         <div className="ml-5">
-          <p className="text-2xl text-blue-600 font-serif">{productName}</p>
+          <p className="text-xl tablet:text-2xl text-blue-600 font-serif">{productName}</p>
           <p className="text-sm">
             Total Item: <span className=" text-red-400">{totalItem}</span>
           </p>
