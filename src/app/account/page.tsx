@@ -90,8 +90,8 @@ const Account: React.FC = () => {
         <button className="font-serif hover:text-blue-600">Logout</button>
       </div>
 
-      <div className="w-[95%] tablet:w-[90%] mt-2 flex justify-between border-t">
-        <div className="tablet:w-[60%] tablet:mt-10">
+      <div className="w-[95%] tablet:w-[90%] mt-2 flex flex-col tablet:flex-row justify-between border-t">
+        <div className="w-full tablet:w-[60%] tablet:mt-10 mt-5 ">
           <p className="text-xl tablet:text-2xl font-serif">Order History</p>
 
           <div className="w-[90%] mb-10">
@@ -105,7 +105,7 @@ const Account: React.FC = () => {
           </div>
         </div>
 
-        <div className="tablet:w-[40%] tablet:mt-10">
+        <div className="w-full tablet:w-[40%] tablet:mt-10 mt-5 mb-5">
           <p className="text-xl tablet:text-2xl font-serif">My Profile</p>
 
           <div className="mt-5 flex items-center justify-between border rounded-md p-3">
