@@ -58,7 +58,7 @@ const Wishlist: React.FC = () => {
   };
 
   return (
-    <div className="w-[95%] tablet:w-[90%] mt-10 tablet:mt-20">
+    <div className="w-[95%] ml-[2.5%] tablet:w-[90%] tablet:ml-[5%] mt-10 tablet:mt-20">
       <p className="text-2xl tablet:text-4xl font-serif mb-5">My Wishlist</p>
 
       {wishlist.length > 0 ? (
