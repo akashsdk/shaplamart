@@ -78,22 +78,22 @@ const Wishlist: React.FC = () => {
                 <p className="text-lg text-red-500">{item.price} tk</p>
               </div>
             </div>
-            <div className="flex items-center">
+            <div className="flex flex-col tablet:flex-row items-center">
               {/* Order Now Button */}
               <button
-                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg mr-4"
+                className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg mb-2 tablet:mb-0 tablet:mr-4 flex items-center justify-center"
                 onClick={() => handleOrder(item.productName)}
               >
                 <ShoppingCartOutlined className="mr-2" />
-                Order Now
+                <span className="hidden tablet:block">Order Now</span>
               </button>
               {/* Delete Button styled like Order Now Button */}
               <button
-                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg flex items-center justify-center"
                 onClick={() => showDeleteConfirm(item.id)}
               >
                 <DeleteOutlined className="mr-2" />
-                Delete
+                <span className="hidden tablet:block">Delete</span>
               </button>
             </div>
           </div>
