@@ -87,9 +87,13 @@ const Wishlist: React.FC = () => {
                 <ShoppingCartOutlined className="mr-2" />
                 Order Now
               </button>
-              {/* Delete Button */}
-              <button onClick={() => showDeleteConfirm(item.id)}>
-                <DeleteOutlined className="text-[24px] text-red-400 hover:text-red-600" />
+              {/* Delete Button styled like Order Now Button */}
+              <button
+                className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+                onClick={() => showDeleteConfirm(item.id)}
+              >
+                <DeleteOutlined className="mr-2" />
+                Delete
               </button>
             </div>
           </div>
