@@ -23,7 +23,7 @@ import Icon16 from '@/Data/Icon/delivery-box.png';
 
 const Category: React.FC = () => {
   return (
-    <div className="w-full mt-10 flex justify-center items-center flex-col">
+    <div className="w-[95%] ml-[2.5%] tablet:ml-0 tablet:w-full mt-10 flex justify-center items-center flex-col">
       <p className="text-2xl tablet:text-4xl text-blue-600 font-serif">
         Featured Categories
       </p>

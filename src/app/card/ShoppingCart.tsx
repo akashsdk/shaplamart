@@ -114,7 +114,7 @@ const ShoppingCart: React.FC<ShoppingCartProps> = ({
   return (
     <div
       key={id}
-      className="relative h-[400px] tablet:w-[300px] w-[200px] mb-3 flex flex-col justify-start items-center group"
+      className="relative h-[400px] tablet:w-[300px] w-[200px] ml-[-8px] tablet:ml-0 mb-3 flex flex-col justify-start items-center group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
