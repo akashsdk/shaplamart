@@ -107,5 +107,11 @@ svg text {
 }
 
 
+/* header */
+.rotate-animation {
+  transform: rotate(180deg);
+}
+
+
 
 

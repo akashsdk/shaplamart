@@ -3,10 +3,15 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Navlink from "./Navlink";
 import Image from "next/image";
+import { Drawer } from "antd";
 import {
   DownOutlined,
   UserOutlined,
   ShoppingCartOutlined,
+  MenuUnfoldOutlined,
+  CloseOutlined,
+  PlusOutlined,
+  MinusOutlined,
 } from "@ant-design/icons";
 
 import Img1 from "@/Data/Img/Featured Product.webp";
@@ -69,10 +74,38 @@ const HeaderTow: React.FC = () => {
     setDropdownOpen5(false);
   };
 
+  // Mobile Screen
+  const [open, setOpen] = useState(false);
+  const showDrawer = () => {
+    setOpen(true);
+  };
+  const onClose2 = () => {
+    setAnimateClose(true);
+
+    setTimeout(() => {
+      setOpen(false);
+      setAnimateClose(false);
+    }, 500);
+  };
+
+  const onClose = () => {
+    setOpen(false);
+  };
+
+  const [animateClose, setAnimateClose] = useState(false);
+
   return (
     <div className="w-full h-[90px] bg-white flex justify-center items-center">
-      <div className="w-[25%] flex justify-center items-center">
-        <Link href='/' className="text-3xl font-bold font-serif">Site Name</Link>
+      <div className="w-[10%] ml-[5%] tablet:hidden">
+        <button onClick={showDrawer}>
+          <MenuUnfoldOutlined className="text-[25px]" />
+        </button>
+      </div>
+
+      <div className="w-[50%] tablet:w-[25%] flex justify-center items-center">
+        <Link href="/" className="text-3xl font-bold font-serif">
+          Shapla Mart
+        </Link>
       </div>
 
       <div className="hidden tablet:flex w-[50%] justify-center items-center">
@@ -470,7 +503,7 @@ const HeaderTow: React.FC = () => {
         </div>
       </div>
 
-      <div className="hidden tablet:flex w-[25%] justify-center items-center">
+      <div className="flex w-[30%] justify-center items-center">
         <div
           className="relative"
           onMouseEnter={handleMouseEnter4}
@@ -534,6 +567,57 @@ const HeaderTow: React.FC = () => {
           }
         />
       </div>
+
+      {/* Mobile Screen */}
+      <Drawer
+        title=""
+        placement="left"
+        closable={false}
+        onClose={onClose}
+        open={open}
+      >
+        <div className="w-full">
+          <div className="flex justify-between items-center">
+            <p className="text-3xl font-semibold">Shapla Mart</p>
+            <button onClick={onClose2}>
+              <CloseOutlined
+                className={`text-2xl transition-transform duration-500 ${
+                  animateClose ? "rotate-animation" : ""
+                }`}
+              />
+            </button>
+          </div>
+          <div className="h-[1px] w-full bg-slate-300 mt-5" />
+
+          <div className="mt-3">
+            <Link
+              href="/"
+              onClick={onClose}
+              className="text-xl font-serif hover:text-blue-600"
+            >
+              Home
+            </Link>
+
+            <div className="w-full flex justify-between items-center mt-5">
+              <div className="h-[15px] w-[32px] absolute mt-[-35px] ml-[20px] bg-red-500 flex justify-center items-center text-white">
+                <p className="text-[10px]">New</p>
+              </div>
+              <Link
+                href="/shop"
+                onClick={onClose}
+                className="text-xl font-serif hover:text-blue-600"
+              >
+                Shop
+              </Link>
+
+              <button>
+                <PlusOutlined />
+                <MinusOutlined />
+              </button>
+            </div>
+          </div>
+        </div>
+      </Drawer>
     </div>
   );
 };
