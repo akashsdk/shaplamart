@@ -8,10 +8,15 @@ import {
   DownOutlined,
   UserOutlined,
   ShoppingCartOutlined,
-  MenuUnfoldOutlined,
+  PicCenterOutlined,
   CloseOutlined,
   PlusOutlined,
   MinusOutlined,
+  FacebookOutlined,
+  TwitterOutlined,
+  InstagramOutlined,
+  YoutubeOutlined,
+  TikTokOutlined,
 } from "@ant-design/icons";
 
 import Img1 from "@/Data/Img/Featured Product.webp";
@@ -76,8 +81,16 @@ const HeaderTow: React.FC = () => {
 
   // Mobile Screen
   const [open, setOpen] = useState(false);
+  const [animateClose, setAnimateClose] = useState(false);
+  const [animateClose2, setAnimateClose2] = useState(false);
+
   const showDrawer = () => {
-    setOpen(true);
+    setAnimateClose2(true);
+
+    setTimeout(() => {
+      setOpen(true);
+      setAnimateClose2(false);
+    }, 500);
   };
   const onClose2 = () => {
     setAnimateClose(true);
@@ -92,13 +105,37 @@ const HeaderTow: React.FC = () => {
     setOpen(false);
   };
 
-  const [animateClose, setAnimateClose] = useState(false);
+  const [submenuOpen, setSubmenuOpen] = useState(true);
+  const [submenuOpen2, setSubmenuOpen2] = useState(false);
+  const [submenuOpen3, setSubmenuOpen3] = useState(false);
+
+  const toggleSubmenu = () => {
+    setSubmenuOpen(!submenuOpen);
+    setSubmenuOpen2(false);
+    setSubmenuOpen3(false);
+  };
+
+  const toggleSubmenu2 = () => {
+    setSubmenuOpen2(!submenuOpen2);
+    setSubmenuOpen(false);
+    setSubmenuOpen3(false);
+  };
+
+  const toggleSubmenu3 = () => {
+    setSubmenuOpen3(!submenuOpen3);
+    setSubmenuOpen(false);
+    setSubmenuOpen2(false);
+  };
 
   return (
     <div className="w-full h-[90px] bg-white flex justify-center items-center">
       <div className="w-[10%] ml-[5%] tablet:hidden">
         <button onClick={showDrawer}>
-          <MenuUnfoldOutlined className="text-[25px]" />
+          <PicCenterOutlined
+            className={`text-2xl transition-transform duration-500 ${
+              animateClose2 ? "rotate-animation" : ""
+            }`}
+          />
         </button>
       </div>
 
@@ -503,14 +540,14 @@ const HeaderTow: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex w-[30%] justify-center items-center">
+      <div className="flex w-[30%] tablet:w-[25%] justify-center items-center">
         <div
           className="relative"
           onMouseEnter={handleMouseEnter4}
           onMouseLeave={handleMouseLeave4}
         >
           <div className="text-red-600 opacity-90 hover:opacity-100 font-serif">
-            Eng <DownOutlined className="text-[15px]" />
+            Eng <DownOutlined className="text-[15px] hidden tablet:block" />
           </div>
 
           {dropdownOpen4 && (
@@ -530,12 +567,13 @@ const HeaderTow: React.FC = () => {
           </div>
 
           {dropdownOpen5 && (
-            <div className="absolute top-full mt-0 left-0 ml-[-3vw] w-40 bg-white shadow-lg z-30">
+            <div className="absolute top-full mt-0 tablet:left-0 ml-[-70px] tablet:ml-[-3vw] w-40 bg-white shadow-lg z-30">
               <Navlink
                 activeClasses="active-red"
                 className="block px-4 mt-2 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
                 href="/account"
                 text="My Account"
+                onClick={handleMouseLeave5}
               />
 
               <Navlink
@@ -543,6 +581,7 @@ const HeaderTow: React.FC = () => {
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
                 href="/wishlist"
                 text="Wishlist"
+                onClick={handleMouseLeave5}
               />
 
               <Navlink
@@ -550,6 +589,7 @@ const HeaderTow: React.FC = () => {
                 className="block px-4 py-2 text-gray-700 hover:bg-gray-100  hover:text-colorF3"
                 href="/login"
                 text="LogIn"
+                onClick={handleMouseLeave5}
               />
             </div>
           )}
@@ -598,6 +638,7 @@ const HeaderTow: React.FC = () => {
               Home
             </Link>
 
+            {/* Shop */}
             <div className="w-full flex justify-between items-center mt-5">
               <div className="h-[15px] w-[32px] absolute mt-[-35px] ml-[20px] bg-red-500 flex justify-center items-center text-white">
                 <p className="text-[10px]">New</p>
@@ -610,11 +651,283 @@ const HeaderTow: React.FC = () => {
                 Shop
               </Link>
 
-              <button>
-                <PlusOutlined />
-                <MinusOutlined />
+              <button onClick={toggleSubmenu} className="w-[15%]">
+                {submenuOpen ? (
+                  <MinusOutlined className="text-xl" />
+                ) : (
+                  <PlusOutlined className="text-xl" />
+                )}
               </button>
             </div>
+            <div
+              className={`ml-[10%] mt-3 mb-4 opacity-70 flex flex-col overflow-hidden transition-all duration-500 ${
+                submenuOpen ? "max-h-[300px]" : "max-h-0"
+              }`}
+            >
+              <Link
+                href="/"
+                onClick={onClose}
+                className="text-lg font-serif hover:text-blue-600"
+              >
+                Women's Fashion
+              </Link>
+
+              <Link
+                href="/"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Men's Fashion
+              </Link>
+
+              <Link
+                href="/"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Baby Fashion
+              </Link>
+
+              <Link
+                href="/"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Accessories
+              </Link>
+
+              <Link
+                href="/"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Footwear
+              </Link>
+            </div>
+
+            {/* Categories */}
+            <div className="w-full flex justify-between items-center mt-2">
+              <div className="h-[15px] w-[32px] absolute mt-[-35px] ml-[50px] bg-blue-600 flex justify-center items-center text-white">
+                <p className="text-[10px]">Hot</p>
+              </div>
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-xl font-serif hover:text-blue-600"
+              >
+                Categories
+              </Link>
+
+              <button onClick={toggleSubmenu2} className="w-[15%]">
+                {submenuOpen2 ? (
+                  <MinusOutlined className="text-xl" />
+                ) : (
+                  <PlusOutlined className="text-xl" />
+                )}
+              </button>
+            </div>
+            <div
+              className={`ml-[10%] mt-3 opacity-70 flex flex-col overflow-hidden transition-all duration-500 ${
+                submenuOpen2 ? "max-h-[350px]" : "max-h-0"
+              }`}
+            >
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg font-serif hover:text-blue-600"
+              >
+                Featured Product
+              </Link>
+
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                New Arrivals
+              </Link>
+
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Summer Styles
+              </Link>
+
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Winter Fashion
+              </Link>
+
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Footwear
+              </Link>
+
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Accessories
+              </Link>
+
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Footwear
+              </Link>
+
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Men
+              </Link>
+
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Women
+              </Link>
+            </div>
+
+            {/* Blog */}
+            <Link
+              href="/Blog"
+              onClick={onClose}
+              className="text-xl font-serif hover:text-blue-600"
+            >
+              Blog
+            </Link>
+
+            {/* Pages */}
+            <div className="w-full flex justify-between items-center mt-5">
+              <Link
+                href="/categories"
+                onClick={onClose}
+                className="text-xl font-serif hover:text-blue-600"
+              >
+                Pages
+              </Link>
+
+              <button onClick={toggleSubmenu3} className="w-[15%]">
+                {submenuOpen3 ? (
+                  <MinusOutlined className="text-xl" />
+                ) : (
+                  <PlusOutlined className="text-xl" />
+                )}
+              </button>
+            </div>
+            <div
+              className={`ml-[10%] mt-3 opacity-70 flex flex-col overflow-hidden transition-all duration-500 ${
+                submenuOpen3 ? "max-h-[300px]" : "max-h-0"
+              }`}
+            >
+              <Link
+                href="/contact"
+                onClick={onClose}
+                className="text-lg font-serif hover:text-blue-600"
+              >
+                Contact
+              </Link>
+
+              <Link
+                href="/about-us"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                About Us
+              </Link>
+
+              <Link
+                href="/services"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Services
+              </Link>
+
+              <Link
+                href="/faq"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                FAQ
+              </Link>
+
+              <Link
+                href="/size-chart"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Size Chart
+              </Link>
+
+              <Link
+                href="/purchase-now"
+                onClick={onClose}
+                className="text-lg mt-2 font-serif hover:text-blue-600"
+              >
+                Purchase Now
+              </Link>
+            </div>
+          </div>
+          <div className="h-[1px] w-full bg-slate-300 mt-5" />
+
+          <div className="w-full mt-5 flex justify-evenly items-center">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
+            >
+              <FacebookOutlined className="text-[35px]" />
+            </a>
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
+            >
+              <TwitterOutlined className="text-[35px]" />
+            </a>
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
+            >
+              <InstagramOutlined className="text-[35px]" />
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
+            >
+              <YoutubeOutlined className="text-[35px]" />
+            </a>
+            <a
+              href="https://tiktok.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className=" opacity-60 hover:opacity-100 hover:text-blue-500 cursor-pointer"
+            >
+              <TikTokOutlined className="text-[35px]" />
+            </a>
           </div>
         </div>
       </Drawer>
