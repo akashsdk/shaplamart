@@ -10,8 +10,8 @@ const AboutUsScreen: React.FC = () => {
       <p className="text-justify mt-3 opacity-70 text-lg">
         ShaplaMart is where fashion meets convenience, making us one of
         Bangladesh&quot;s top destinations for trendy and affordable fashion. Whether
-        you're dressing for work, casual outings, or events, ShaplaMart offers a
-        wide range of women's, men's, and baby products, along with stylish
+        you&quot;re dressing for work, casual outings, or events, ShaplaMart offers a
+        wide range of women&quot;s, men&quot;s, and baby products, along with stylish
         accessories to suit every need. Our focus on quality, affordability, and
         modern trends has quickly established us as a leading fashion hub in
         Bangladesh.
@@ -19,7 +19,7 @@ const AboutUsScreen: React.FC = () => {
 
       <p className="text-2xl text-left mt-5">Best Women&quot;s Fashion Store</p>
       <p className="text-justify mt-3 opacity-70 text-lg">
-        ShaplaMart specializes in women's fashion, offering everything from
+        ShaplaMart specializes in women&quot;s fashion, offering everything from
         sarees and T-shirts to dresses and shoes. Our collection also includes
         jewelry, skincare products, and more, making us your one-stop-shop for
         all things stylish. Whether shopping online or at our stores, we make

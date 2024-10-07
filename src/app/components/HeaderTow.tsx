@@ -671,7 +671,7 @@ const HeaderTow: React.FC = () => {
                 onClick={onClose}
                 className="text-lg font-serif hover:text-blue-600"
               >
-                Women's Fashion
+                Women&quot;s Fashion
               </Link>
 
               <Link
@@ -679,7 +679,7 @@ const HeaderTow: React.FC = () => {
                 onClick={onClose}
                 className="text-lg mt-2 font-serif hover:text-blue-600"
               >
-                Men's Fashion
+                Men&quot;s Fashion
               </Link>
 
               <Link

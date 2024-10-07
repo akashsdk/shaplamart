@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { CloseOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
 
+
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState([
     {
@@ -10,14 +11,14 @@ const Cart: React.FC = () => {
       name: "Product 1",
       price: 50,
       quantity: 1,
-      image: "/path-to-image/product1.jpg",
+      image: "@/Data/Shopping-Data/baby-and-kid-shoe_1.webp",
     },
     {
       id: 2,
       name: "Product 2",
       price: 75,
       quantity: 2,
-      image: "/path-to-image/product2.jpg",
+      image: "@/Data/Shopping-Data/blueshoe_1.webp",
     },
   ]);
 
