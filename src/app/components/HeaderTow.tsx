@@ -141,7 +141,7 @@ const HeaderTow: React.FC = () => {
 
       <div className="w-[50%] tablet:w-[25%] flex justify-center items-center">
         <Link href="/" className="text-3xl font-bold font-serif">
-          Shapla Mart
+          Shapla<span className="text-blue-600">Mart</span>
         </Link>
       </div>
 
@@ -618,7 +618,9 @@ const HeaderTow: React.FC = () => {
       >
         <div className="w-full">
           <div className="flex justify-between items-center">
-            <p className="text-3xl font-semibold">Shapla Mart</p>
+            <p className="text-3xl font-semibold font-serif">
+              Shapla<span className="text-blue-600">Mart</span>
+            </p>
             <button onClick={onClose2}>
               <CloseOutlined
                 className={`text-2xl transition-transform duration-500 ${
