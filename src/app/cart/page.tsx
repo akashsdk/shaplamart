@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { CloseOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
+import Image from "next/image";
 
 
 const Cart: React.FC = () => {
@@ -56,7 +57,7 @@ const Cart: React.FC = () => {
               className="flex justify-between items-center p-4 border rounded-lg shadow-md"
             >
               <div className="flex items-center">
-                <img
+                <Image
                   src={item.image}
                   alt={item.name}
                   className="w-16 h-16 object-cover mr-4"
