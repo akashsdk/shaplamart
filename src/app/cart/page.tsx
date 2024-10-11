@@ -12,14 +12,14 @@ const Cart: React.FC = () => {
       name: "Product 1",
       price: 50,
       quantity: 1,
-      image: "@/Data/Shopping-Data/baby-and-kid-shoe_1.webp",
+      image: "",
     },
     {
       id: 2,
       name: "Product 2",
       price: 75,
       quantity: 2,
-      image: "@/Data/Shopping-Data/blueshoe_1.webp",
+      image: "",
     },
   ]);
 

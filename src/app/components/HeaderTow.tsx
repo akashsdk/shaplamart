@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Navlink from "./Navlink";
 import Image from "next/image";
@@ -17,6 +17,7 @@ import {
   InstagramOutlined,
   YoutubeOutlined,
   TikTokOutlined,
+  SearchOutlined,
 } from "@ant-design/icons";
 
 import Img1 from "@/Data/Img/Featured Product.webp";
@@ -61,13 +62,22 @@ const HeaderTow: React.FC = () => {
 
   const [dropdownOpen4, setDropdownOpen4] = useState(false);
 
-  const handleMouseEnter4 = () => {
-    setDropdownOpen4(true);
+  const handleToggleDropdown = () => {
+    setDropdownOpen4(!dropdownOpen4);
   };
 
-  const handleMouseLeave4 = () => {
-    setDropdownOpen4(false);
+  const handleScroll = () => {
+    if (window.scrollY > 1000) {
+      setDropdownOpen4(false); // Close dropdown when scrolled beyond 1000px
+    }
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const [dropdownOpen5, setDropdownOpen5] = useState(false);
 
@@ -541,18 +551,61 @@ const HeaderTow: React.FC = () => {
       </div>
 
       <div className="flex w-[30%] tablet:w-[25%] justify-center items-center">
-        <div
-          className="relative"
-          onMouseEnter={handleMouseEnter4}
-          onMouseLeave={handleMouseLeave4}
-        >
-          <div className="text-red-600 opacity-90 hover:opacity-100 font-serif">
-            Eng <DownOutlined className="text-[15px] hidden tablet:block" />
+        <div className="relative">
+          <div
+            className="opacity-90 hover:opacity-100 font-serif cursor-pointer"
+            onClick={handleToggleDropdown}
+          >
+            {dropdownOpen4 ? (
+              <CloseOutlined className="text-[25px] hidden tablet:block" />
+            ) : (
+              <SearchOutlined className="text-[25px] hidden tablet:block" />
+            )}
           </div>
 
+          {/* Search Box For Desktop */}
           {dropdownOpen4 && (
-            <div className="absolute top-full left-0 mt-2 ml-[-2vw] w-40 p-2 bg-slate-200 shadow-lg rounded-md z-30">
-              English 🇬🇧
+            <div className="w-[500px] h-[80px] absolute top-full left-0 mt-0 ml-[-300px] p-2 bg-transparent rounded-md z-30">
+              <form className="max-w-md mx-auto">
+                <label
+                  htmlFor="default-search"
+                  className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+                >
+                  Search
+                </label>
+                <div className="relative">
+                  <div className="absolute inset-y-0 start-0 flex items-center justify-center ps-3 pointer-events-none">
+                    <svg
+                      className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                      />
+                    </svg>
+                  </div>
+                  <input
+                    type="search"
+                    id="default-search"
+                    className="block w-full p-4 ps-10 text-xl text-gray-900 border border-gray-300 rounded-lg bg-gray-50 outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white placeholder:text-xl"
+                    placeholder="Search any product.."
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="text-white absolute end-2.5 bottom-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                  >
+                    Search
+                  </button>
+                </div>
+              </form>
             </div>
           )}
         </div>
@@ -630,6 +683,50 @@ const HeaderTow: React.FC = () => {
             </button>
           </div>
           <div className="h-[1px] w-full bg-slate-300 mt-5" />
+
+          {/* Search Box For Mobile */}
+          <div className="mt-3">
+            <form className="max-w-md mx-auto">
+              <label
+                htmlFor="default-search"
+                className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+              >
+                Search
+              </label>
+              <div className="relative">
+                <div className="absolute inset-y-0 start-0 flex items-center justify-center ps-3 pointer-events-none">
+                  <svg
+                    className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      stroke="currentColor"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                    />
+                  </svg>
+                </div>
+                <input
+                  type="search"
+                  id="default-search"
+                  className="block w-full p-4 ps-10 text-lg text-gray-900 border border-gray-300 rounded-lg bg-gray-50 outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white placeholder:text-lg"
+                  placeholder="Search any product.."
+                  required
+                />
+                <button
+                  type="submit"
+                  className="text-white absolute end-2.5 bottom-3 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
 
           <div className="mt-3">
             <Link
