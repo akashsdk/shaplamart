@@ -9,17 +9,17 @@ const AboutUsScreen: React.FC = () => {
       </p>
       <p className="text-justify mt-3 opacity-70 text-lg">
         ShaplaMart is where fashion meets convenience, making us one of
-        Bangladesh&quot;s top destinations for trendy and affordable fashion. Whether
-        you&quot;re dressing for work, casual outings, or events, ShaplaMart offers a
-        wide range of women&quot;s, men&quot;s, and baby products, along with stylish
+        Bangladesh&apos;s top destinations for trendy and affordable fashion. Whether
+        you&apos;re dressing for work, casual outings, or events, ShaplaMart offers a
+        wide range of women&apos;s, men&apos;s, and baby products, along with stylish
         accessories to suit every need. Our focus on quality, affordability, and
         modern trends has quickly established us as a leading fashion hub in
         Bangladesh.
       </p>
 
-      <p className="text-2xl text-left mt-5">Best Women&quot;s Fashion Store</p>
+      <p className="text-2xl text-left mt-5">Best Women&apos;s Fashion Store</p>
       <p className="text-justify mt-3 opacity-70 text-lg">
-        ShaplaMart specializes in women&quot;s fashion, offering everything from
+        ShaplaMart specializes in women&apos;s fashion, offering everything from
         sarees and T-shirts to dresses and shoes. Our collection also includes
         jewelry, skincare products, and more, making us your one-stop-shop for
         all things stylish. Whether shopping online or at our stores, we make
@@ -33,9 +33,9 @@ const AboutUsScreen: React.FC = () => {
         it easier for parents to find everything they need under one roof.
       </p>
 
-      <p className="text-2xl text-left mt-5">Exclusive Men&quot;s Fashion</p>
+      <p className="text-2xl text-left mt-5">Exclusive Men&apos;s Fashion</p>
       <p className="text-justify mt-3 opacity-70 text-lg">
-        ShaplaMart offers a curated selection of men&quot;s clothing, shoes, and
+        ShaplaMart offers a curated selection of men&apos;s clothing, shoes, and
         accessories that cater to modern style. From casual wear to formal
         outfits, our collection keeps you looking sharp, whether you shop online
         or offline.
@@ -45,7 +45,7 @@ const AboutUsScreen: React.FC = () => {
         Fashion Accessories for Every Occasion
       </p>
       <p className="text-justify mt-3 opacity-70 text-lg">
-        Complete your look with ShaplaMart&quot;s wide range of jewelry, bags,
+        Complete your look with ShaplaMart&apos;s wide range of jewelry, bags,
         watches, and more. We offer quality accessories to elevate your outfit
         for any occasion.
       </p>
