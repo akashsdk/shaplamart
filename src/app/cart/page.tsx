@@ -1,79 +1,133 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  CloseOutlined,
-  PlusOutlined,
-  MinusOutlined,
-  DeleteOutlined,
-} from "@ant-design/icons";
+import { CloseOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import Image from "next/image";
-import { Checkbox } from "antd";
-
 import Img1 from "@/Data/Shopping-Data/baby-dress_1.webp";
 import Img2 from "@/Data/Shopping-Data/earring_2_600x.webp";
-import Img3 from "@/Data/Shopping-Data/shirt_1.webp";
+import Link from "next/link";
 
 const Cart: React.FC = () => {
+  const [cartItems, setCartItems] = useState([
+    { id: 1, name: "Aa. Men Coat", price: 4800, quantity: 1, image: Img1 },
+    {
+      id: 2,
+      name: "B. Pair of Blue Shoes",
+      price: 9800,
+      quantity: 1,
+      image: Img2,
+    },
+  ]);
+
+  const incrementQuantity = (id: number) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decrementQuantity = (id: number) => {
+    setCartItems((prevItems) =>
+      prevItems.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
+  };
+
+  const removeItem = (id: number) => {
+    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+  };
+
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
   return (
-    <div className="w-full flex flex-col justify-center items-center border-t">
-      <div className="w-[90%] mt-5 tablet:mt-10 border-b-2">
-        <p className="text-3xl font-bold font-serif text-blue-600">
-          Cart
-          <samp className="text-3xl font-bold font-serif text-red-500">
-            &apos;s
-          </samp>
-        </p>
+    <div className="w-full">
+      <div className="w-full h-[60px] bg-slate-200 flex justify-center items-center">
+        <p className="text-2xl">Your Shopping Cart</p>
       </div>
 
-      {/* Cart-Product */}
-      <div className="w-[90%] mt-5 tablet:mt-10 mb-5 p-2 border-b flex justify-between items-center">
-        <div className="flex justify-center items-center">
-          <Checkbox value="1"></Checkbox>
-          <Image
-            alt="product"
-            src={Img1}
-            className="ml-5 h-[80px] w-[80px] rounded-lg"
-          />
+      <div className="container mx-auto p-8">
+        <div className="grid grid-cols-1 gap-6">
+          {cartItems.map((item) => (
+            <div
+              key={item.id}
+              className="flex justify-between items-center border p-4 rounded-lg shadow-md"
+            >
+              <div className="flex items-center">
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  width={80}
+                  height={80}
+                />
+                <div className="ml-4">
+                  <p className="font-bold">{item.name}</p>
+                  <p>TK {item.price.toFixed(2)}</p>
+                </div>
+              </div>
 
-          <div className="ml-5">
-            <p className="text-xl text-blue-600 font-medium">Product Name</p>
-            <p className="opacity-60">
-              Size: <samp>2xl</samp>
-            </p>
-            <p className="text-xl text-red-400 font-serif">2300TK</p>
+              <div className="flex items-center">
+                <button
+                  onClick={() => decrementQuantity(item.id)}
+                  className="border p-2"
+                >
+                  <MinusOutlined />
+                </button>
+                <span className="px-4">{item.quantity}</span>
+                <button
+                  onClick={() => incrementQuantity(item.id)}
+                  className="border p-2"
+                >
+                  <PlusOutlined />
+                </button>
+              </div>
+
+              <p>TK {(item.price * item.quantity).toFixed(2)}</p>
+              <button
+                onClick={() => removeItem(item.id)}
+                className="text-red-500"
+              >
+                <CloseOutlined />
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex justify-between mt-8">
+          <Link href='/' className="bg-blue-500 text-white px-4 py-2 rounded-md">
+            Continue Shopping
+          </Link>
+          
+          <button className="bg-red-500 text-white px-4 py-2 rounded-md">
+            Clear Cart
+          </button>
+        </div>
+
+        <div className="mt-8">
+          <label className="block mb-2">Special instructions for seller</label>
+          <textarea className="w-full p-4 border rounded-md outline-none" rows={4} />
+        </div>
+
+        <div className="mt-8 flex justify-between">
+          <div className="w-1/2">
+            <h2 className="text-xl font-bold">Cart Totals</h2>
+            <div className="mt-4">
+              <p className="flex justify-between">
+                <span>Subtotal</span> <span>TK {totalPrice.toFixed(2)}</span>
+              </p>
+              <p className="flex justify-between mt-2 font-semibold">
+                <span>Total</span> <span>TK {totalPrice.toFixed(2)}</span>
+              </p>
+            </div>
           </div>
-        </div>
-
-        <div className="ml-5 h-10 flex justify-center items-center border-2 p-2 rounded-md">
-          <PlusOutlined className="text-2xl cursor-pointer hover:text-red-500" />
-          <p className="text-2xl w-4 ml-2 mr-2">1</p>
-          <MinusOutlined className="text-2xl cursor-pointer hover:text-red-500" />
-        </div>
-
-        <div className="flex flex-col justify-center items-end">
-          <DeleteOutlined className="text-2xl cursor-pointer text-red-400 hover:text-red-500 mb-5" />
-          <p>
-            Sub Total: <span className="text-red-500">2300</span> TK.
-          </p>
-        </div>
-      </div>
-
-      <div className="w-[90%] mt-5 tablet:mt-10">
-        <p className="text-2xl ">
-          Subtotal: <samp className="ml-[20%]" />
-          Tk 14,600.00 BDT
-        </p>
-
-        <div>
-          <button className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-red-500 rounded-xl group">
-            <span className="absolute top-0 right-0 inline-block w-4 h-4 transition-all duration-500 ease-in-out bg-red-700 rounded group-hover:-mr-4 group-hover:-mt-4">
-              <span className="absolute top-0 right-0 w-5 h-5 rotate-45 translate-x-1/2 -translate-y-1/2 bg-white"></span>
-            </span>
-            <span className="absolute bottom-0 left-0 w-full h-full transition-all duration-500 ease-in-out delay-200 -translate-x-full translate-y-full bg-red-600 rounded-2xl group-hover:mb-12 group-hover:translate-x-0"></span>
-            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
-              Checkout
-            </span>
+          <button className="bg-blue-600 h-[50px] text-white px-3 text-center rounded-md border-2 border-blue-600 hover:bg-transparent hover:text-blue-600 text-xl">
+            Proceed to Checkout
           </button>
         </div>
       </div>
