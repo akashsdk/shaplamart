@@ -655,7 +655,7 @@ const HeaderTow: React.FC = () => {
           text={
             <div className="flex">
               <ShoppingCartOutlined className="text-[25px]" />
-              <p className="mt-[-10px] opacity-70">0</p>
+              <p className="mt-[-10px] opacity-70">3</p>
             </div>
           }
         />

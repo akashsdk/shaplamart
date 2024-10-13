@@ -46,7 +46,21 @@ const Cart: React.FC = () => {
   };
 
   const removeItem = (id: number) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    const confirmRemove = window.confirm(
+      "Are you sure you want to remove this item?"
+    );
+    if (confirmRemove) {
+      setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
+    }
+  };
+
+  const clearCart = () => {
+    const confirmClear = window.confirm(
+      "Are you sure you want to clear the cart?"
+    );
+    if (confirmClear) {
+      setCartItems([]);
+    }
   };
 
   const totalPrice = cartItems.reduce(
@@ -108,21 +122,30 @@ const Cart: React.FC = () => {
         </div>
 
         <div className="flex justify-between mt-8">
-          <Link href='/' className="bg-blue-500 text-white px-4 py-2 rounded-md">
+          <Link
+            href="/"
+            className="bg-blue-500 text-white px-4 py-2 rounded-md"
+          >
             Continue Shopping
           </Link>
-          
-          <button className="bg-red-500 text-white px-4 py-2 rounded-md">
+
+          <button
+            onClick={clearCart}
+            className="bg-red-500 text-white px-4 py-2 rounded-md"
+          >
             Clear Cart
           </button>
         </div>
 
         <div className="mt-8">
           <label className="block mb-2">Special instructions for seller</label>
-          <textarea className="w-full p-4 border rounded-md outline-none" rows={4} />
+          <textarea
+            className="w-full p-4 border rounded-md outline-none"
+            rows={4}
+          />
         </div>
 
-        <div className="mt-8 flex justify-between">
+        <div className="mt-8 tablet:flex justify-between">
           <div className="w-1/2">
             <h2 className="text-xl font-bold">Cart Totals</h2>
             <div className="mt-4">
@@ -134,9 +157,9 @@ const Cart: React.FC = () => {
               </p>
             </div>
           </div>
-          <button className="bg-blue-600 h-[50px] text-white px-3 text-center rounded-md border-2 border-blue-600 hover:bg-transparent hover:text-blue-600 text-xl">
+          <Link href='/checkouts' className="bg-blue-600 mt-5 tablet:mt-0 h-[40px] tablet:h-[50px] text-white px-3 text-center rounded-md border-2 border-blue-600 hover:bg-transparent hover:text-blue-600 tablet:text-xl flex  justify-center items-center">
             Proceed to Checkout
-          </button>
+          </Link>
         </div>
       </div>
     </div>
