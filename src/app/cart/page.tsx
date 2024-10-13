@@ -5,17 +5,25 @@ import { CloseOutlined, PlusOutlined, MinusOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import Img1 from "@/Data/Shopping-Data/baby-dress_1.webp";
 import Img2 from "@/Data/Shopping-Data/earring_2_600x.webp";
+import Img3 from "@/Data/Shopping-Data/blueshoe_2_600x.webp";
 import Link from "next/link";
 
 const Cart: React.FC = () => {
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Aa. Men Coat", price: 4800, quantity: 1, image: Img1 },
+    { id: 1, name: "Aa. Baby Coat", price: 4800, quantity: 1, image: Img1 },
     {
       id: 2,
+      name: "Ring SW-521",
+      price: 800,
+      quantity: 1,
+      image: Img2,
+    },
+    {
+      id: 3,
       name: "B. Pair of Blue Shoes",
       price: 9800,
       quantity: 1,
-      image: Img2,
+      image: Img3,
     },
   ]);
 
